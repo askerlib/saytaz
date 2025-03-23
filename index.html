@@ -1,0 +1,1774 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sayt.az</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      position: relative;
+      height: 100%;
+    }
+
+    swiper-container {
+      width: 100% !important;
+      height: 100% !important;
+    }
+
+    swiper-slide {
+      text-align: center;
+      font-size: 18px;
+      background: #fff;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 350px;
+    }
+
+    .section1 {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      gap: 30px;
+    }
+
+    .sec5img {
+      margin-left: 5%;
+      margin-top: 2%;
+      width: 90%;
+      height: 60%;
+      object-fit: cover;
+    }
+
+
+    .section1 h3 {
+      text-align: center;
+      color: #334155;
+      font: 500 50px arial;
+      width: 955px;
+    }
+
+    .section1 p {
+      text-align: center;
+      font: 500 18px arial;
+      color: gray;
+      width: 750px;
+      letter-spacing: 2px;
+    }
+
+    .pagination {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 16px;
+      /* Gap arasındakı boşluğu tənzimləyir */
+      margin-top: 32px;
+      /* Yuxarıda boşluq */
+    }
+
+    .pagination button {
+      padding: 10px 20px;
+      font-size: 16px;
+      font-weight: 600;
+      color: #4a4a4a;
+      background-color: #f1f1f1;
+      border: 2px solid #ccc;
+      border-radius: 50px;
+      /* Yuvarlaq künclər */
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .pagination button:hover {
+      background-color: #007bff;
+      color: white;
+      transform: scale(1.1);
+      border-color: #007bff;
+      box-shadow: 0 4px 8px rgba(0, 123, 255, 0.3);
+    }
+
+    .pagination button:focus {
+      outline: none;
+      /* Fokusda kənar xətti silmək */
+      box-shadow: 0 0 0 4px rgba(0, 123, 255, 0.3);
+    }
+
+    .pagination .active {
+      background-color: #007bff;
+      color: white;
+      border-color: #007bff;
+      font-weight: bold;
+      transform: scale(1.1);
+    }
+
+    .pagination button:disabled {
+      background-color: #ddd;
+      color: #bbb;
+      cursor: not-allowed;
+      box-shadow: none;
+    }
+
+
+    @media (max-width: 1024px) {
+      .dropdown-menu {
+        display: none;
+      }
+
+      .burger-menu {
+        display: block;
+      }
+
+      .mobile-dropdown {
+        display: none;
+      }
+
+      .menu-active .mobile-dropdown {
+        display: block;
+      }
+
+
+    }
+
+    @media (max-width: 550px) {
+      .sec2cards div {
+        display: none;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .sec1h3 {
+        font: 500 30px arial !important;
+        max-width: 90% !important;
+      }
+
+      .sec1p {
+        font: 500 19px arial !important;
+        max-width: 90% !important;
+
+      }
+
+      .navbarr {
+        padding: 0 20px !important;
+      }
+
+
+      .section2all {
+        flex-direction: column !important;
+        justify-content: center !important;
+        align-items: center !important;
+        gap: 30px !important;
+      }
+
+      .sec2cards {
+        flex-wrap: wrap !important;
+      }
+
+      .sec2bar {
+        justify-content: center !important;
+        align-items: center !important;
+      }
+
+
+
+    }
+
+    @media (min-width: 1024px) {
+      .burger-menu {
+        display: none;
+      }
+
+      #sec3p {
+        font: 500 17px arial !important;
+      }
+
+      .sec4top {
+        display: flex;
+        margin: 0 5%;
+        gap: 50px;
+      }
+
+      #sec4h3 {
+        font: 600 42px arial !important;
+      }
+
+      #sec4h4 {
+        font: 500 20px arial !important;
+      }
+
+      #section4btn2,
+      #section4btn1 {
+        font: 500 18px arial !important;
+        width: 130px;
+      }
+
+      .section5top {
+        flex-direction: row !important;
+        justify-content: space-between;
+        align-items: center !important;
+        margin: 0 5%;
+      }
+
+      .sec5h3 {
+        font: 600 42px arial !important;
+      }
+
+      .sec5p {
+        font: 500 20px arial !important;
+      }
+
+      .section5cards {
+        flex-wrap: nowrap !important;
+      }
+
+      .sec5card {
+        height: 520px !important;
+      }
+
+      .section6 {
+        position: relative;
+        padding: 100px !important;
+      }
+
+      .sec6divs {
+        position: absolute;
+        bottom: -50px;
+      }
+
+      .sec7flex {
+        flex-direction: row !important;
+        flex-wrap: wrap !important;
+      }
+
+    }
+  </style>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+</head>
+
+<body>
+
+  <header class="navbarr fixed top-0 left-0 w-full bg-white shadow-md py-7 z-50">
+    <div class="container mx-auto px-4">
+      <nav class="flex justify-between items-center">
+        <div class="logo">
+          <a href="index.html">
+            <svg xmlns="http://www.w3.org/2000/svg" width="131" height="40" viewBox="0 0 131 40" fill="none">
+              <g clip-path="url(#clip0_2391_1204)">
+                <path
+                  d="M10.2789 31.0504C6.96305 31.0504 4.4557 30.4233 2.77754 29.1474C1.09937 27.8723 0.16676 25.9901 0.00128174 23.4809H2.46727C3.66878 23.4809 4.85051 24.1298 5.34694 25.2378C6.00976 26.7434 7.64745 27.4957 10.2375 27.4957C11.7709 27.4957 12.9517 27.1826 13.7809 26.5546C14.6092 25.9275 15.0031 25.1326 15.0031 24.1706C15.0031 23.5435 14.7963 23.0417 14.3817 22.6442C13.9671 22.2467 13.4284 21.9127 12.7449 21.6614C12.0614 21.3891 11.2943 21.1595 10.4246 20.9499C9.55404 20.7412 8.68439 20.5106 7.77246 20.281C6.88121 20.0514 5.99087 19.7592 5.12031 19.4244C4.24975 19.0895 3.48352 18.6711 2.80002 18.1493C2.11652 17.6266 1.57782 16.9995 1.16323 16.2254C0.748631 15.4722 0.541784 14.532 0.541784 13.424C0.541784 12.3994 0.748631 11.4583 1.16323 10.6225C1.57782 9.76491 2.17858 9.03346 2.9664 8.42725C3.75332 7.82103 4.70662 7.34006 5.82629 6.98432C6.94507 6.64945 8.23022 6.4616 9.65927 6.4616C12.8087 6.4616 15.1713 7.02606 16.7667 8.155C18.3622 9.28393 19.1904 10.9565 19.2741 13.1735H16.4358C15.3791 13.1735 14.4671 12.5464 13.9077 11.6053C13.2656 10.5181 11.9184 9.97363 9.86701 9.97363C9.26536 9.97363 8.70597 10.0362 8.16727 10.1624C7.62856 10.2876 7.1726 10.4755 6.80027 10.706C6.40636 10.9356 6.11678 11.2496 5.88834 11.6053C5.66081 11.9602 5.55649 12.3585 5.55649 12.8177C5.55649 13.2152 5.61854 13.5501 5.72197 13.8423C5.82629 14.1345 6.09519 14.4068 6.4882 14.6364C6.88211 14.8878 7.48287 15.1382 8.27069 15.3687C9.05851 15.6201 10.1152 15.8915 11.4409 16.2263C12.9329 16.6238 14.2387 17.0213 15.3161 17.4179C16.3935 17.8154 17.2847 18.2755 17.9682 18.7973C18.6526 19.3409 19.1707 19.9689 19.4809 20.7212C19.8128 21.4526 19.9567 22.3937 19.9567 23.4809C19.9567 24.5681 19.7507 25.5727 19.3361 26.492C18.9215 27.4113 18.3208 28.2063 17.4916 28.876C16.684 29.5448 15.6686 30.0676 14.4662 30.4442C13.2647 30.8199 11.8554 31.0086 10.2393 31.0086L10.2807 31.0504H10.2789ZM116.68 26.3668L130.233 11.2705V7.23479H107.957V7.77838C108.62 8.34285 109.159 9.05342 109.511 9.95276C109.676 10.3502 109.801 10.8312 109.905 11.3539H123.622L110.07 26.4503V30.4859H131V29.4822C131 27.7471 129.611 26.3459 127.892 26.3459H116.661L116.68 26.3668ZM107.606 10.9565C107.171 9.86927 106.508 9.03255 105.617 8.42634C104.684 7.79925 103.649 7.33915 102.447 7.0669C101.266 6.79556 99.8979 6.66941 98.3447 6.66941C91.7967 6.66941 88.3774 9.07429 88.0662 13.8832H90.5529C91.6923 13.8832 92.8327 13.2978 93.3291 12.2524C93.5576 11.7923 93.8885 11.3948 94.3031 11.1026C95.1728 10.4954 96.4166 10.1824 98.0534 10.1824C99.7522 10.1824 100.974 10.4954 101.721 11.1652C102.301 11.6253 102.695 12.2524 102.881 13.0682C102.964 13.3813 103.005 13.7997 103.027 14.3433C103.047 14.866 103.068 15.4931 103.068 16.1828H101.099C96.4588 16.1828 92.9775 16.8516 90.677 18.1902C88.854 19.2574 87.7766 20.7402 87.3827 22.6433C88.0455 23.166 88.6049 23.8149 89.0411 24.5672C89.2273 24.8803 89.3927 25.1943 89.4962 25.5291C89.7866 26.3032 89.9521 27.1182 89.9521 27.9966C89.9521 28.4985 89.8901 29.0003 89.7866 29.4604C90.471 29.9414 91.2373 30.318 92.1069 30.5894C93.0809 30.8825 94.0963 31.0286 95.1944 31.0286C98.4059 31.0286 101.037 30.1084 103.109 28.2471V30.485H105.14C106.86 30.485 108.248 29.0838 108.248 27.3487V15.4096C108.248 13.5065 108.021 12.0219 107.585 10.9347L107.606 10.9565ZM103.089 24.3594C102.758 24.8195 102.364 25.2369 101.929 25.6135C101.473 25.9901 100.996 26.3041 100.457 26.5546C99.9186 26.806 99.3592 27.0147 98.7584 27.1617C98.1577 27.3078 97.5569 27.3705 96.9355 27.3705C95.5883 27.3705 94.5118 27.0773 93.7239 26.5129C92.9163 25.9484 92.5215 25.0908 92.5215 23.9828C92.5215 22.4563 93.205 21.3274 94.5522 20.595C95.8994 19.8636 97.9301 19.5079 100.602 19.5079H103.089V24.3793V24.3594ZM76.7103 27.9975C76.7103 27.6209 76.7516 27.2443 76.8137 26.8895C76.7516 26.8895 76.6896 26.8895 76.6275 26.8895C76.275 26.8895 75.9647 26.8477 75.6949 26.7425C75.4251 26.6381 75.1769 26.4711 74.9898 26.1989C74.8037 25.9266 74.658 25.5718 74.5546 25.0899C74.4502 24.6089 74.4089 23.9818 74.4089 23.2295V10.9347H75.0717C76.7912 10.9347 78.1798 9.53349 78.1798 7.79835V7.00337H74.408V3.1356C74.408 1.40045 73.0194 -0.000732422 71.2999 -0.000732422H69.2071V7.00428C67.5703 7.00428 66.2438 8.34285 66.2438 9.9945V10.9356H69.2071V23.8784C69.2071 25.0491 69.2898 26.0528 69.4562 26.9312C69.6217 27.8088 69.9329 28.5203 70.4095 29.1056C70.8655 29.6701 71.5076 30.1093 72.3368 30.4024C73.1444 30.6946 74.2011 30.8417 75.4863 30.8417C76.087 30.8417 76.6464 30.8208 77.1438 30.779C77.1851 30.779 77.2481 30.7582 77.2895 30.7582C77.2274 30.5912 77.1653 30.4233 77.124 30.2563C76.8749 29.5666 76.7507 28.8134 76.7507 28.0402L76.7103 27.9975ZM60.0716 7.02606H61.087C63.2427 7.02606 64.7554 9.20044 63.9882 11.2496L56.9024 30.5068C56.4464 31.741 56.0111 32.8282 55.6172 33.7484C55.2233 34.6686 54.8303 35.4209 54.4571 36.0271C54.1468 36.529 53.7943 37.0308 53.4003 37.5118C53.0064 37.9928 52.5712 38.4111 52.0738 38.7868C51.5765 39.1626 51.0378 39.4557 50.4163 39.6644C49.8156 39.8949 49.1312 39.9993 48.3856 39.9993C47.7426 39.9993 47.2246 39.9575 46.8316 39.8949C46.0851 39.7697 45.5464 39.1208 45.5464 38.3685V35.1069C45.9197 35.253 46.2929 35.3583 46.6652 35.4C47.0384 35.4627 47.4117 35.4835 47.7633 35.4835C48.2606 35.4835 48.6959 35.3783 49.1105 35.1695C49.5044 34.9608 49.8767 34.6468 50.2086 34.2285C50.5405 33.8101 50.8507 33.2874 51.1619 32.6603C51.4515 32.0332 51.7627 31.3226 52.0316 30.4859L43.3287 7.02606H46.5411C47.8883 7.02606 49.0691 7.90362 49.4837 9.17957L52.1359 17.3553C52.5298 18.6094 52.9228 19.8645 53.2753 21.0978C53.6486 22.3311 54.0416 23.5653 54.4562 24.7986L60.0501 7.02606H60.0716ZM38.189 28.2489C36.0962 30.1102 33.444 31.0504 30.1902 31.0504C29.0922 31.0504 28.0561 30.9043 27.0821 30.6112C26.1081 30.318 25.2376 29.8788 24.5127 29.3143C23.787 28.7499 23.1862 28.0393 22.7716 27.1817C22.3363 26.345 22.1295 25.3622 22.1295 24.2332C22.1295 21.4944 23.2896 19.4461 25.6315 18.0867C27.9518 16.7273 31.4754 16.0584 36.1376 16.0584H38.1269C38.1269 15.347 38.1062 14.7407 38.0855 14.1971C38.0648 13.6536 38.0028 13.2352 37.9398 12.9221C37.7537 12.1072 37.3598 11.4792 36.7797 10.9982C36.0332 10.3493 34.811 10.0154 33.0915 10.0154C31.434 10.0154 30.1696 10.3285 29.2999 10.9347C28.8646 11.2487 28.5337 11.6253 28.3052 12.1063C27.8079 13.1517 26.6684 13.7579 25.5074 13.7579H23C23.2896 8.90732 26.7503 6.48065 33.3604 6.48065C34.9145 6.48065 36.303 6.62767 37.5046 6.87814C38.707 7.14948 39.7637 7.60959 40.6954 8.23758C41.6073 8.84379 42.2701 9.70138 42.7054 10.7886C43.1407 11.8758 43.3682 13.3813 43.3682 15.3052V27.3696C43.3682 29.1047 41.9797 30.5059 40.2601 30.5059H38.1872V28.248L38.189 28.2489ZM38.1476 19.4253H35.6402C32.9467 19.4253 30.8953 19.8019 29.5274 20.5333C28.1595 21.2657 27.476 22.4155 27.476 23.9628C27.476 25.0917 27.87 25.9493 28.6776 26.5138C29.4861 27.0782 30.5635 27.3714 31.9314 27.3714C32.5528 27.3714 33.1536 27.3088 33.7759 27.1626C34.3767 27.0165 34.9567 26.8078 35.4954 26.5564C36.0341 26.2851 36.5315 25.9711 36.9874 25.5945C37.4434 25.2179 37.8373 24.7995 38.1683 24.3394V19.4262L38.1476 19.4253Z"
+                  fill="#334155" />
+                <path
+                  d="M83.2174 32.4942C85.6825 32.4942 87.6718 30.4868 87.6718 27.9985C87.6718 25.5101 85.6834 23.5027 83.2174 23.5027C80.7514 23.5027 78.7621 25.5101 78.7621 27.9985C78.7621 30.4868 80.7514 32.4942 83.2174 32.4942Z"
+                  fill="#7D3BE2" />
+              </g>
+              <defs>
+                <clipPath id="clip0_2391_1204">
+                  <rect width="131" height="40" fill="white" />
+                </clipPath>
+              </defs>
+            </svg>
+          </a>
+        </div>
+
+        <ul class="flex justify-between items-center space-x-10 menu-items lg:flex hidden">
+          <li class="relative">
+            <button class="dropdown-button font-semibold text-black">Veb sayt ▼</button>
+            <div class="dropdown-menu absolute mt-2 w-64 bg-white border shadow-lg rounded-lg p-2 hidden">
+              <div class="flex items-center space-x-3 p-2 hover:bg-gray-100 cursor-pointer">
+                <span>🖥️</span>
+                <div>
+                  <p class="font-semibold">Saytların hazırlanması</p>
+                  <p class="text-gray-500 text-sm">Web saytların hazırlanması</p>
+                </div>
+              </div>
+              <div class="flex items-center space-x-3 p-2 hover:bg-gray-100 cursor-pointer">
+                <span>🖥️</span>
+                <div>
+                  <p class="font-semibold">Saytların hazırlanması</p>
+                  <p class="text-gray-500 text-sm">Web saytların hazırlanması</p>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <li class="relative">
+            <button class="dropdown-button font-semibold text-black">Domen ▼</button>
+            <div class="dropdown-menu absolute mt-2 w-64 bg-white border shadow-lg rounded-lg p-2 hidden">
+              <div class="flex items-center space-x-3 p-2 hover:bg-gray-100 cursor-pointer">
+                <span>🖥️</span>
+                <div>
+                  <p class="font-semibold">Saytların hazırlanması</p>
+                  <p class="text-gray-500 text-sm">Web saytların hazırlanması</p>
+                </div>
+              </div>
+              <div class="flex items-center space-x-3 p-2 hover:bg-gray-100 cursor-pointer">
+                <span>🖥️</span>
+                <div>
+                  <p class="font-semibold">Saytların hazırlanması</p>
+                  <p class="text-gray-500 text-sm">Web saytların hazırlanması</p>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <li class="relative">
+            <button class="dropdown-button font-semibold text-black">Hostinq ▼</button>
+            <div class="dropdown-menu absolute mt-2 w-64 bg-white border shadow-lg rounded-lg p-2 hidden">
+              <div class="flex items-center space-x-3 p-2 hover:bg-gray-100 cursor-pointer">
+                <span>🖥️</span>
+                <div>
+                  <p class="font-semibold">Saytların hazırlanması</p>
+                  <p class="text-gray-500 text-sm">Web saytların hazırlanması</p>
+                </div>
+              </div>
+              <div class="flex items-center space-x-3 p-2 hover:bg-gray-100 cursor-pointer">
+                <span>🖥️</span>
+                <div>
+                  <p class="font-semibold">Saytların hazırlanması</p>
+                  <p class="text-gray-500 text-sm">Web saytların hazırlanması</p>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <li class="relative">
+            <button class="dropdown-button font-semibold text-black">Xidmətlər ▼</button>
+            <div class="dropdown-menu absolute mt-2 w-64 bg-white border shadow-lg rounded-lg p-2 hidden">
+              <div class="flex items-center space-x-3 p-2 hover:bg-gray-100 cursor-pointer">
+                <span><i class="fa-solid fa-calculator text-2xl"></i></span>
+                <a href="calculator.htm" target="_blank">
+                  <div>
+                    <p class="font-semibold">Sayt kalkulyatoru</p>
+                    <p class="text-gray-500 text-sm">Saytın qiymətini öyrən</p>
+                  </div>
+                </a>
+              </div>
+              <div class="flex items-center space-x-3 p-2 hover:bg-gray-100 cursor-pointer">
+                <span>🖥️</span>
+                <div>
+                  <p class="font-semibold">Saytların hazırlanması</p>
+                  <p class="text-gray-500 text-sm">Web saytların hazırlanması</p>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <li class="relative">
+            <button class="dropdown-button font-semibold text-black">Şirkət ▼</button>
+            <div class="dropdown-menu absolute mt-2 w-64 bg-white border shadow-lg rounded-lg p-2 hidden">
+              <div class="flex items-center space-x-3 p-2 hover:bg-gray-100 cursor-pointer">
+                <span>🖥️</span>
+                <div>
+                  <p class="font-semibold">Saytların hazırlanması</p>
+                  <p class="text-gray-500 text-sm">Web saytların hazırlanması</p>
+                </div>
+              </div>
+              <div class="flex items-center space-x-3 p-2 hover:bg-gray-100 cursor-pointer">
+                <span>🖥️</span>
+                <div>
+                  <p class="font-semibold">Saytların hazırlanması</p>
+                  <p class="text-gray-500 text-sm">Web saytların hazırlanması</p>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+
+        <div class="actions-container lg:flex hidden justify-between items-center space-x-4">
+          <label for="currensy" class="flex items-center">
+            <select name="currensy" id="currensy" class="bg-white border rounded px-2 py-1">
+              <option value="azn">₼</option>
+              <option value="usd">$</option>
+            </select>
+          </label>
+          <label for="flag" class="flex items-center">
+            <select name="flag" id="flag" class="bg-white border rounded px-2 py-1">
+              <option value="az">AZ</option>
+              <option value="en">EN</option>
+            </select>
+          </label>
+          <button class="bg-gradient-to-r from-purple-800 to-pink-200 text-white px-4 py-2 rounded-md">
+            Qiymet teklifi al
+          </button>
+          <button class="bg-white text-purple-500 px-4 py-2 rounded-md border border-purple-500">
+            Daxil olun
+          </button>
+        </div>
+
+        <div class="burger-menu lg:hidden">
+          <button id="burgerButton" class="font-semibold text-black text-2xl">
+            ☰
+          </button>
+        </div>
+
+        <div id="mobileMenu"
+          class="mobile-menu fixed top-0 left-0 w-full h-full bg-white z-50 hidden transform transition-transform duration-300 ease-in-out">
+          <div class="flex justify-between items-center p-4 border-b">
+            <div class="logo">
+            </div>
+            <button id="closeButton" class="text-2xl font-bold">
+              ×
+            </button>
+          </div>
+          <div class="p-4">
+
+            <ul class="mobile-menu-items space-y-4">
+              <li class="py-2 border-b">
+                <div class="mobile-dropdown-button flex justify-between items-center">
+                  <span class="font-semibold">Veb sayt</span>
+                  <span class="text-lg">▼</span>
+                </div>
+                <ul class="mobile-submenu hidden mt-2 pl-4 space-y-2">
+                  <li class="py-1">
+                    <div class="flex items-center space-x-2">
+                      <span>🖥️</span>
+                      <span>Saytların hazırlanması</span>
+                    </div>
+                  </li>
+                  <li class="py-1">
+                    <div class="flex items-center space-x-2">
+                      <span>🏛️</span>
+                      <span>Hökumət və qeyri-kommersiya saytları</span>
+                    </div>
+                  </li>
+                  <li class="py-1">
+                  </li>
+                </ul>
+              </li>
+
+              <li class="py-2 border-b">
+                <div class="mobile-dropdown-button flex justify-between items-center">
+                  <span class="font-semibold">Domen</span>
+                  <span class="text-lg">▼</span>
+                </div>
+                <ul class="mobile-submenu hidden mt-2 pl-4 space-y-2">
+                  <li class="py-1">
+                    <div class="flex items-center space-x-2">
+                      <span>🖥️</span>
+                      <span>Saytların hazırlanması</span>
+                    </div>
+                  </li>
+                  <li class="py-1">
+                    <div class="flex items-center space-x-2">
+                      <span>🖥️</span>
+                      <span>Saytların hazırlanması</span>
+                    </div>
+                  </li>
+                </ul>
+              </li>
+
+              <li class="py-2 border-b">
+                <div class="mobile-dropdown-button flex justify-between items-center">
+                  <span class="font-semibold">Hostinq</span>
+                  <span class="text-lg">▼</span>
+                </div>
+                <ul class="mobile-submenu hidden mt-2 pl-4 space-y-2">
+                  <li class="py-1">
+                    <div class="flex items-center space-x-2">
+                      <span>🖥️</span>
+                      <span>Saytların hazırlanması</span>
+                    </div>
+                  </li>
+                  <li class="py-1">
+                    <div class="flex items-center space-x-2">
+                      <span>🖥️</span>
+                      <span>Saytların hazırlanması</span>
+                    </div>
+                  </li>
+                </ul>
+              </li>
+
+              <li class="py-2 border-b">
+                <div class="mobile-dropdown-button flex justify-between items-center">
+                  <span class="font-semibold">Xidmətlər</span>
+                  <span class="text-lg">▼</span>
+                </div>
+                <ul class="mobile-submenu hidden mt-2 pl-4 space-y-2">
+                  <li class="py-1">
+                    <div class="flex items-center space-x-2">
+                      <span>🖥️</span>
+                      <span>Saytların hazırlanması</span>
+                    </div>
+                  </li>
+                  <li class="py-1">
+                    <div class="flex items-center space-x-2">
+                      <span>🖥️</span>
+                      <span>Saytların hazırlanması</span>
+                    </div>
+                  </li>
+                </ul>
+              </li>
+
+              <li class="py-2 border-b">
+                <div class="mobile-dropdown-button flex justify-between items-center">
+                  <span class="font-semibold">Şirkət</span>
+                  <span class="text-lg">▼</span>
+                </div>
+                <ul class="mobile-submenu hidden mt-2 pl-4 space-y-2">
+                  <li class="py-1">
+                    <div class="flex items-center space-x-2">
+                      <span>🖥️</span>
+                      <span>Saytların hazırlanması</span>
+                    </div>
+                  </li>
+                  <li class="py-1">
+                    <div class="flex items-center space-x-2">
+                      <span>🖥️</span>
+                      <span>Saytların hazırlanması</span>
+                    </div>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+
+            <div class="mobile-actions mt-6 space-y-4">
+              <div class="flex justify-between items-center">
+                <label for="mobile-currensy" class="flex items-center">
+                  <select name="mobile-currensy" id="mobile-currensy" class="bg-white border rounded px-2 py-1">
+                    <option value="azn">₼</option>
+                    <option value="usd">$</option>
+                  </select>
+                </label>
+                <label for="mobile-flag" class="flex items-center">
+                  <select name="mobile-flag" id="mobile-flag" class="bg-white border rounded px-2 py-1">
+                    <option value="az">AZ</option>
+                    <option value="en">EN</option>
+                  </select>
+                </label>
+              </div>
+              <button class="w-full bg-gradient-to-r from-purple-800 to-pink-200 text-white px-4 py-2 rounded-md">
+                Qiymet teklifi al
+              </button>
+              <button class="w-full bg-white text-purple-500 px-4 py-2 rounded-md border border-purple-500">
+                Daxil olun
+              </button>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+
+  <main>
+    <div class="container mx-auto px-4 ">
+      <div class="section1">
+        <h3 class="sec1h3">Biznesinizi bizimlə rəqəmsal dünyada <span class="text-[#2563EB]">daha asan</span> yoldan
+          irəliyə apar!</h3>
+        <p class="sec1p">Mütəxəssislərdən ibarət komandamız sizə müştəri dəstəyi və texniki yardım göstərmək üçün 24/7
+          hazırdır.</p>
+        <button class="bg-white text-blue-600 px-5 py-3 rounded-md border-2 border-purple-500">Sayt sifariş
+          et</button>
+      </div>
+    </div>
+
+    <div class="section2 overflow-hidden pb-10">
+      <div class="container mx-auto px-5">
+        <div class="section2all flex justify-center gap-[150px]">
+          <div class="sec2part1">
+
+            <div class="sec2cards flex gap-5 justify-center">
+              <div class="flex flex-col bg-white shadow-sm border border-slate-200 rounded-lg my-6 w-full sm:w-48 h-80">
+                <div class="p-4 text-center">
+                  <p class="text-sm font-semibold text-slate-500 uppercase">
+                    Tamamlandı
+                  </p>
+                  <div class="m-2.5 overflow-hidden rounded-md h-48 flex justify-center items-center">
+                    <svg width="60" height="60">
+                      <g transform="rotate(-90 30 30)">
+                        <circle r="25" cx="30" cy="30" fill="transparent" stroke="lightgrey" stroke-width="0.3rem"
+                          stroke-dasharray="157.0796326794895" stroke-dashoffset="0" stroke-linecap="round"></circle>
+                        <circle r="25" cx="30" cy="30" fill="transparent" stroke="#22BFA5" stroke-width="0.3rem"
+                          stroke-dasharray="157.0796326794895" stroke-dashoffset="0" stroke-linecap="round"></circle>
+                      </g>
+                      <text x="50%" y="50%" dominant-baseline="central" text-anchor="middle" font-size="1em">100%</text>
+                    </svg>
+                  </div>
+                  <h4 class="mb-1 text-lg font-semibold text-slate-800">
+                    Sabina G.
+                  </h4>
+                  <p class="text-sm text-slate-600 mt-2 font-light">
+                    Designer
+                  </p>
+                </div>
+              </div>
+
+              <div class="flex flex-col bg-white shadow-sm border border-slate-200 rounded-lg my-6 w-full sm:w-48 h-80">
+                <div class="p-4 text-center">
+                  <p class="text-sm font-semibold text-slate-500 uppercase">
+                    Icradadır
+                  </p>
+                  <div class="m-2.5 overflow-hidden rounded-md h-48 flex justify-center items-center">
+                    <svg width="60" height="60">
+                      <g transform="rotate(-90 30 30)">
+                        <circle r="25" cx="30" cy="30" fill="transparent" stroke="lightgrey" stroke-width="0.3rem"
+                          stroke-dasharray="157.0796326794895" stroke-dashoffset="0" stroke-linecap="round"></circle>
+                        <circle r="25" cx="30" cy="30" fill="transparent" stroke="#fc5185" stroke-width="0.3rem"
+                          stroke-dasharray="157.0796326794895" stroke-dashoffset="31.41592653589793"
+                          stroke-linecap="round"></circle>
+                      </g>
+                      <text x="50%" y="50%" dominant-baseline="central" text-anchor="middle" font-size="1em">90%</text>
+                    </svg>
+                  </div>
+                  <h4 class="mb-1 text-lg font-semibold text-slate-800">
+                    Fuad M.
+                  </h4>
+                  <p class="text-sm text-slate-600 mt-2 font-light">
+                    Frontend Developer
+                  </p>
+                </div>
+              </div>
+
+              <div class="bg-white shadow-sm border border-slate-200 rounded-lg my-6 w-full sm:w-48 h-80">
+                <div class="p-4 text-center">
+                  <p class="text-sm font-semibold text-slate-500 uppercase">
+                    Icradadır
+                  </p>
+                  <div class="m-2.5 overflow-hidden rounded-md h-48 flex justify-center items-center">
+                    <svg width="60" height="60">
+                      <g transform="rotate(-90 30 30)">
+                        <circle r="25" cx="30" cy="30" fill="transparent" stroke="lightgrey" stroke-width="0.3rem"
+                          stroke-dasharray="157.0796326794895" stroke-dashoffset="0" stroke-linecap="round"></circle>
+                        <circle r="25" cx="30" cy="30" fill="transparent" stroke="#fc5185" stroke-width="0.3rem"
+                          stroke-dasharray="157.0796326794895" stroke-dashoffset="51.56786301135806"
+                          stroke-linecap="round"></circle>
+                      </g>
+                      <text x="50%" y="50%" dominant-baseline="central" text-anchor="middle" font-size="1em">65%</text>
+                    </svg>
+                  </div>
+                  <h4 class="mb-1 text-lg font-semibold text-slate-800">
+                    Ahmad R.
+                  </h4>
+                  <p class="text-sm text-slate-600 mt-2 font-light">
+                    Backend Developer
+                  </p>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="sec2bar flex items-center mt-6 w-[82%] mx-auto">
+              <div class="flex items-center space-x-4">
+                <div class="flex flex-col items-center">
+                  <div class="w-8 h-8 flex items-center justify-center rounded-full bg-purple-600 text-white">
+                    ✓
+                  </div>
+                  <span class="text-sm text-gray-700 mt-2">Web Design</span>
+                </div>
+                <div class="w-16 h-1 bg-purple-600"></div>
+                <div class="flex flex-col items-center">
+                  <div
+                    class="w-8 h-8 flex items-center justify-center rounded-full border-2 border-purple-600 text-purple-600">
+                  </div>
+                  <span class="text-sm text-gray-700 mt-2">Back-end</span>
+                </div>
+
+                <div class="w-16 h-1 bg-gray-300"></div>
+                <div class="flex flex-col items-center">
+                  <div
+                    class="w-8 h-8 flex items-center justify-center rounded-full border-2 border-gray-300 text-gray-300">
+                  </div>
+                  <span class="text-sm text-gray-500 mt-2">Front-end</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="sec2part2 mt-[100px] flex flex-col items-center gap-5">
+
+            <h3 class="mb-1 text-lg font-semibold text-slate-800">Vebsayt sifarişinizi izləyin</h3>
+            <input class="border border-black rounded-[10px] px-6 py-2" id="sec2inp" type="text"
+              placeholder="Sifariş Kodu">
+            <p id="sec2output" class="text-red-500"></p>
+            <button id="sec2btn"
+              class="w-80 bg-purple-500 text-white text-lg font-semibold py-3 rounded-lg shadow-lg transition duration-300 hover:bg-purple-600 focus:outline-none focus:ring-4 focus:ring-purple-300">
+              İzlə
+            </button>
+
+            <p class="text-gray-500">Sayt.az ilə sifarişlərinizə hər zaman nəzarət edin</p>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="section3 py-12 bg-purple-50">
+      <div class="container mx-auto px-5 max-w-3xl text-center">
+        <div class="section3part1 mb-6">
+          <h3 class="text-2xl font-bold text-purple-900">Domen Adını Axtarın</h3>
+          <p id="sec3p" class="text-sm text-gray-600 my-4">
+            .az domain sifariş etməmişdən öncə <a href="https://whois.az"
+              class="text-purple-500 font-semibold">whois.az</a> saytında yoxlayın
+          </p>
+          <p id="sec3p" class="text-sm text-gray-600 mt-1">
+            Sayt.az-da .az domenləri yalnız aktiv hosting planı olan müştərilər üçün əlçatandır.
+            Davam etməzdən əvvəl bizdən hosting aldığınıza əmin olun.
+            <a href="#" class="text-purple-600 font-bold">Ətraflı oxu...</a>
+          </p>
+        </div>
+
+        <div class="section3part2 flex flex-wrap items-center justify-center gap-2 p-4 rounded-xl ">
+          <input type="text" id="section3inp"
+            class="border border-gray-300 rounded-lg px-4 py-2 w-2/3 sm:w-80 text-gray-700 outline-none"
+            placeholder="İstədiyiniz domen adını daxil edin">
+          <select class="border border-gray-300 rounded-lg px-2 py-2 text-gray-700 focus:ring-2 focus:ring-purple-400">
+            <option>.org</option>
+            <option>.com</option>
+            <option>.net</option>
+            <option>.az</option>
+            <option>.info</option>
+            <option>.biz</option>
+          </select>
+          <button id="section3btn"
+            class="bg-purple-500 text-white font-semibold px-6 py-2 rounded-lg shadow-lg transition hover:bg-purple-600">Axtar</button>
+        </div>
+
+        <p id="section3error" class="text-red-500 text-xs mt-2"></p>
+
+        <div class="section3part3 mt-6 grid grid-cols-3 sm:grid-cols-6 gap-4">
+          <div class="text-center">
+            <h5 class="text-purple-600 font-semibold">.az</h5>
+            <h6 class="text-gray-700 text-sm">₼40/il</h6>
+          </div>
+          <div class="text-center">
+            <h5 class="text-purple-600 font-semibold">.com</h5>
+            <h6 class="text-gray-700 text-sm">₼25/il</h6>
+          </div>
+          <div class="text-center">
+            <h5 class="text-purple-600 font-semibold">.net</h5>
+            <h6 class="text-gray-700 text-sm">₼38/il</h6>
+          </div>
+          <div class="text-center">
+            <h5 class="text-purple-600 font-semibold">.info</h5>
+            <h6 class="text-gray-700 text-sm">₼55/il</h6>
+          </div>
+          <div class="text-center">
+            <h5 class="text-purple-600 font-semibold">.biz</h5>
+            <h6 class="text-gray-700 text-sm">₼30/il</h6>
+          </div>
+          <div class="text-center">
+            <h5 class="text-purple-600 font-semibold">.org</h5>
+            <h6 class="text-gray-700 text-sm">₼35/il</h6>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section4 py-12">
+      <div class="container mx-auto px-5 ">
+        <div class="section4all">
+          <div class="sec4top">
+            <div class="ml-12">
+              <h3 id="sec4h3" class="text-2xl font-bold text-purple-900">Hostinq Planınızı Seçin</h3>
+              <h4 id="sec4h4" class="text-lg text-purple-700 mt-2">
+                Yaxşı Bir Başlanğıc Təhlükəsiz və Güclü Hostinq Tələb Edir
+              </h4>
+            </div>
+            <div class="flex justify-center mt-4">
+              <div class="bg-gray-200 rounded-full p-1 flex">
+                <button id="section4btn1" class="px-6 py-2 bg-purple-500 text-white rounded-full">Aylıq</button>
+                <button id="section4btn2" class="px-6 py-2 text-gray-600 rounded-full">İllik</button>
+              </div>
+            </div>
+          </div>
+          <div>
+
+            <section class="p-4 md:p-8">
+              <div class="py-8 max-w-screen-xl lg:py-16 flex justify-center align-center flex-col mx-auto">
+                <div class="space-y-8 lg:grid lg:grid-cols-3 sm:gap-6 xl:gap-10 lg:space-y-0">
+                  <div
+                    class="flex flex-col p-6 mx-auto max-w-md text-center rounded-box shadow-xl xl:p-8  border border-base-300 shadow-primary/10 border-primary/10 transition hover:border-primary-focus/20 hover:shadow-primary-focus/20">
+                    <h3 class="mb-4 text-2xl font-semibold">Economic</h3>
+                    <div class="flex justify-center items-baseline my-1 h-10">
+                      <p class="font-light sm:text-lg">No credit card required. Ever</p>
+                    </div>
+                    <div class="flex justify-center items-baseline my-9">
+                      <span id="sec4card1price" class="mr-2 text-5xl font-extrabold">$5</span>
+                      <span class="sec4cardstime">/month</span>
+                    </div>
+                    <ul role="list" class="mb-8 space-y-4 text-left">
+                      <li class="flex items-center space-x-3">
+
+                        <svg class="w-6 h-6 text-green-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                          fill="currentColor" viewBox="0 0 20 20">
+                          <path
+                            d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z">
+                          </path>
+                        </svg>
+
+                        <span class="text-base-content/80">Use your own browser</span>
+                      </li>
+                      <li class="flex items-center space-x-3">
+                        <svg class="w-6 h-6 text-green-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                          fill="currentColor" viewBox="0 0 20 20">
+                          <path
+                            d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z">
+                          </path>
+                        </svg>
+                        <span class="text-base-content/80">Use your own OpenAI key</span>
+                      </li>
+                      <li class="flex items-center space-x-3">
+                        <svg class="w-6 h-6 text-green-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                          fill="currentColor" viewBox="0 0 20 20">
+                          <path
+                            d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z">
+                          </path>
+                        </svg>
+                        <span class="text-base-content/80">Data export</span>
+                      </li>
+                      <li class="flex items-center space-x-3">
+                        <svg class="w-6 h-6 text-green-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                          fill="currentColor" viewBox="0 0 20 20">
+                          <path
+                            d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z">
+                          </path>
+                        </svg>
+                        <span class="text-base-content/80">Basic support</span>
+                      </li>
+                      <li class="flex items-center space-x-3">
+                        <svg class="w-6 h-6 text-error" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                          fill="currentColor" viewBox="0 0 20 20">
+                          <path
+                            d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 11.793a1 1 0 1 1-1.414 1.414L10 11.414l-2.293 2.293a1 1 0 0 1-1.414-1.414L8.586 10 6.293 7.707a1 1 0 0 1 1.414-1.414L10 8.586l2.293-2.293a1 1 0 0 1 1.414 1.414L11.414 10l2.293 2.293Z">
+                          </path>
+                        </svg>
+                        <span class="text-base-content/30">Scheduled jobs</span>
+                      </li>
+                      <li class="flex items-center space-x-3">
+                        <svg class="w-6 h-6 text-error" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                          fill="currentColor" viewBox="0 0 20 20">
+                          <path
+                            d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 11.793a1 1 0 1 1-1.414 1.414L10 11.414l-2.293 2.293a1 1 0 0 1-1.414-1.414L8.586 10 6.293 7.707a1 1 0 0 1 1.414-1.414L10 8.586l2.293-2.293a1 1 0 0 1 1.414 1.414L11.414 10l2.293 2.293Z">
+                          </path>
+                        </svg>
+                        <span class="text-base-content/30">Smart downloader and cost-optimized AI</span>
+                      </li>
+                      <li class="flex items-center space-x-3">
+                        <svg class="w-6 h-6 text-error" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                          fill="currentColor" viewBox="0 0 20 20">
+                          <path
+                            d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 11.793a1 1 0 1 1-1.414 1.414L10 11.414l-2.293 2.293a1 1 0 0 1-1.414-1.414L8.586 10 6.293 7.707a1 1 0 0 1 1.414-1.414L10 8.586l2.293-2.293a1 1 0 0 1 1.414 1.414L11.414 10l2.293 2.293Z">
+                          </path>
+                        </svg>
+                        <span class="text-base-content/30">Dedicated server</span>
+                      </li>
+                    </ul>
+                    <button class="w-full font-bold gap-2 shadow uppercase p-2 bg-teal-500 text-white">Get
+                      Started</button>
+                  </div>
+                  <div
+                    class="flex flex-col p-6 mx-auto max-w-md text-center rounded-box shadow-xl xl:p-8  border border-base-300 shadow-primary/10 border-primary/10 transition hover:border-primary-focus/20 hover:shadow-primary-focus/20">
+                    <h3 class="mb-4 text-2xl font-semibold">Cloud</h3>
+                    <div class="flex justify-center items-baseline my-1 h-10">
+                      <p class="font-light sm:text-lg">For Hobbyist.</p>
+                    </div>
+                    <div class="flex justify-center items-baseline my-9">
+
+                      <span id="sec4card2price" class="mr-2 text-5xl font-extrabold">$15</span>
+                      <span class="sec4cardstime">/month</span>
+                    </div>
+                    <ul role="list" class="mb-8 space-y-4 text-left">
+                      <li class="flex items-center space-x-3">
+                        <svg class="w-6 h-6 text-green-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                          fill="currentColor" viewBox="0 0 20 20">
+                          <path
+                            d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z">
+                          </path>
+                        </svg>
+                        <span class="text-base-content/80">Use our servers</span>
+                      </li>
+                      <li class="flex items-center space-x-3">
+                        <svg class="w-6 h-6 text-green-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                          fill="currentColor" viewBox="0 0 20 20">
+                          <path
+                            d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z">
+                          </path>
+                        </svg>
+                        <span class="text-base-content/80">Use our specialized AI</span>
+                      </li>
+                      <li class="flex items-center space-x-3">
+                        <svg class="w-6 h-6 text-green-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                          fill="currentColor" viewBox="0 0 20 20">
+                          <path
+                            d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z">
+                          </path>
+                        </svg>
+                        <span class="text-base-content/80">Data export</span>
+                      </li>
+                      <li class="flex items-center space-x-3">
+                        <svg class="w-6 h-6 text-green-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                          fill="currentColor" viewBox="0 0 20 20">
+                          <path
+                            d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z">
+                          </path>
+                        </svg>
+                        <span class="text-base-content/80">Full support</span>
+                      </li>
+                      <li class="flex items-center space-x-3">
+                        <svg class="w-6 h-6 text-green-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                          fill="currentColor" viewBox="0 0 20 20">
+                          <path
+                            d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z">
+                          </path>
+                        </svg>
+                        <span class="text-base-content/80">Scheduled jobs</span>
+                      </li>
+                      <li class="flex items-center space-x-3">
+                        <svg class="w-6 h-6 text-green-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                          fill="currentColor" viewBox="0 0 20 20">
+                          <path
+                            d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z">
+                          </path>
+                        </svg>
+                        <span class="text-base-content/80">Smart downloader and cost-optimized AI</span>
+                      </li>
+                      <li class="flex items-center space-x-3">
+                        <svg class="w-6 h-6 text-error" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                          fill="currentColor" viewBox="0 0 20 20">
+                          <path
+                            d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 11.793a1 1 0 1 1-1.414 1.414L10 11.414l-2.293 2.293a1 1 0 0 1-1.414-1.414L8.586 10 6.293 7.707a1 1 0 0 1 1.414-1.414L10 8.586l2.293-2.293a1 1 0 0 1 1.414 1.414L11.414 10l2.293 2.293Z">
+                          </path>
+                        </svg>
+                        <span class="text-base-content/30">Dedicated server</span>
+                      </li>
+                    </ul>
+                    <button class="w-full p-2 bg-gray-500 text-white font-bold gap-2 shadow uppercase">Coming soon
+                      ...</button>
+                  </div>
+                  <div
+                    class="flex flex-col p-6 mx-auto max-w-md text-center rounded-box shadow-xl xl:p-8  border border-base-300 shadow-primary/10 border-primary/10 transition hover:border-primary-focus/20 hover:shadow-primary-focus/20">
+                    <h3 class="mb-4 text-2xl font-semibold">Enterprise</h3>
+                    <div class="flex justify-center items-baseline my-1 h-10">
+                      <p class="font-light sm:text-lg">For professionals.</p>
+                    </div>
+                    <div class="flex justify-center items-baseline my-9">
+
+                      <span id="sec4card3price" class="mr-2 text-5xl font-extrabold">$100</span>
+                      <span class="sec4cardstime">/month</span>
+                    </div>
+                    <ul role="list" class="mb-8 space-y-4 text-left">
+                      <li class="flex items-center space-x-3">
+                        <svg class="w-6 h-6 text-green-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                          fill="currentColor" viewBox="0 0 20 20">
+                          <path
+                            d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z">
+                          </path>
+                        </svg>
+                        <span class="text-base-content/80">Your own server</span>
+                      </li>
+                      <li class="flex items-center space-x-3">
+                        <svg class="w-6 h-6 text-green-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                          fill="currentColor" viewBox="0 0 20 20">
+                          <path
+                            d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z">
+                          </path>
+                        </svg>
+                        <span class="text-base-content/80">Use our specialized AI</span>
+                      </li>
+                      <li class="flex items-center space-x-3">
+                        <svg class="w-6 h-6 text-green-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                          fill="currentColor" viewBox="0 0 20 20">
+                          <path
+                            d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z">
+                          </path>
+                        </svg>
+                        <span class="text-base-content/80">Data export</span>
+                      </li>
+                      <li class="flex items-center space-x-3">
+                        <svg class="w-6 h-6 text-green-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                          fill="currentColor" viewBox="0 0 20 20">
+                          <path
+                            d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z">
+                          </path>
+                        </svg>
+                        <span class="text-base-content/80">Premium support</span>
+                      </li>
+                      <li class="flex items-center space-x-3">
+                        <svg class="w-6 h-6 text-green-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                          fill="currentColor" viewBox="0 0 20 20">
+                          <path
+                            d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z">
+                          </path>
+                        </svg>
+                        <span class="text-base-content/80">Scheduled jobs</span>
+                      </li>
+                      <li class="flex items-center space-x-3">
+                        <svg class="w-6 h-6 text-green-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                          fill="currentColor" viewBox="0 0 20 20">
+                          <path
+                            d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z">
+                          </path>
+                        </svg>
+                        <span class="text-base-content/80">Smart downloader and cost-optimized AI</span>
+                      </li>
+                      <li class="flex items-center space-x-3">
+                        <svg class="w-6 h-6 text-green-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                          fill="currentColor" viewBox="0 0 20 20">
+                          <path
+                            d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z">
+                          </path>
+                        </svg>
+                        <span class="text-base-content/80">Dedicated server</span>
+                      </li>
+                    </ul>
+                    <button class="w-full p-2 bg-gray-500 text-white font-bold gap-2 shadow uppercase">Coming soon
+                      ...</button>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section5 mt-12 mb-12">
+      <div class="container mx-auto px-5">
+        <div class="section5all flex flex-col gap-5">
+          <div class="section5top flex flex-col gap-5 mb-12">
+            <div>
+              <h3 class="sec5h3 text-2xl font-bold text-purple-900">Startuplar</h3>
+              <p class="sec5p text-purple-700 mt-3">Mütəxəssis məsləhətlərimizlə biznesinizi necə inkişaf etdirəcəyinizi
+                öyrənin.</p>
+            </div>
+            <div><button
+                class="sec5btn bg-purple-500 text-white font-semibold px-6 py-2 rounded-lg shadow-lg transition hover:bg-purple-600">Bütün
+                StartUplar >></button></div>
+          </div>
+          <div class="section5cards flex justify-center flex-wrap gap-5 mt">
+            <div class="sec5card h-[68vh] border border-gray-200 rounded-lg shadow-sm bg-[#FAF4FF]">
+              <a href="#">
+                <img class="sec5img" src="/imgs/saytaz.jpg" alt="" />
+              </a>
+              <div class="p-5">
+                <a href="#">
+                  <h5 class="mb-2 text-2xl font-bold tracking-tight text-purple-900">Noteworthy technology acquisitions
+                    2021</h5>
+                </a>
+                <p class="mb-3 text-purple-500 ">Here are the biggest enterprise technology acquisitions of 2021 so far,
+                  in reverse chronological order.</p>
+                <div><button
+                    class="bg-purple-500 text-white font-semibold px-6 py-2 rounded-full shadow-lg transition hover:bg-purple-600">Ətraflı
+                    oxu...</button></div>
+              </div>
+            </div>
+            <div class="sec5card h-[68vh] border border-gray-200 rounded-lg shadow-sm bg-[#FAF4FF]">
+              <a href="#">
+                <img class="sec5img" src="/imgs/kreditaz.png" alt="" />
+              </a>
+              <div class="p-5">
+                <a href="#">
+                  <h5 class="mb-2 text-2xl font-bold tracking-tight text-purple-900">Noteworthy technology acquisitions
+                    2021</h5>
+                </a>
+                <p class="mb-3 text-purple-500 ">Here are the biggest enterprise technology acquisitions of 2021 so far,
+                  in reverse chronological order.</p>
+                <div><button
+                    class="bg-purple-500 text-white font-semibold px-6 py-2 rounded-full shadow-lg transition hover:bg-purple-600">Ətraflı
+                    oxu...</button></div>
+              </div>
+            </div>
+            <div class="sec5card h-[68vh] border border-gray-200 rounded-lg shadow-sm bg-[#FAF4FF]">
+              <a href="#">
+                <img class="sec5img" src="/imgs/ppp.png" alt="" />
+              </a>
+              <div class="p-5">
+                <a href="#">
+                  <h5 class="mb-2 text-2xl font-bold tracking-tight text-purple-900">Noteworthy technology acquisitions
+                    2021</h5>
+                </a>
+                <p class="mb-3 text-purple-500">Here are the biggest enterprise technology acquisitions of 2021 so far,
+                  in reverse chronological order.</p>
+                <div><button
+                    class="bg-purple-500 text-white font-semibold px-6 py-2 rounded-full shadow-lg transition hover:bg-purple-600">Ətraflı
+                    oxu...</button></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section6 bg-[#A271F2] p-10 mb-12">
+      <div class="container mx-auto px-5">
+        <div class="section6all flex flex-col justify-center items-center text-center gap-5">
+          <div>
+            <h3 class="text-white text-3xl">Statistikalarımız</h3>
+          </div>
+          <div class="sec6divs flex flex-wrap justify-center gap-5">
+            <div class="bg-white p-5 rounded-lg shadow-lg w-60 flex flex-col items-center">
+              <h4 class="text-xl font-bold text-purple-900">20+ il</h4>
+              <p class="mt-3 text-sm text-purple-900">Biz Təcrübəmizə Güvənirik</p>
+            </div>
+            <div class="bg-white p-5 rounded-lg shadow-lg w-60 flex flex-col items-center">
+              <h4 class="text-xl font-bold text-purple-900">1000+</h4>
+              <p class="mt-3 text-sm text-purple-900">Məmnun Müştərilər</p>
+            </div>
+            <div class="bg-white p-5 rounded-lg shadow-lg w-60 flex flex-col items-center">
+              <h4 class="text-xl font-bold text-purple-900">200+</h4>
+              <p class="mt-3 text-sm text-purple-900">Tamamlanan Layihələr</p>
+            </div>
+            <div class="bg-white p-5 rounded-lg shadow-lg w-60 flex flex-col items-center">
+              <h4 class="text-xl font-bold text-purple-900">25+</h4>
+              <p class="mt-3 text-sm text-purple-900">Peşəkarlar Komandası</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section7 sm:py-12">
+      <div class="container mx-auto px-5">
+        <div class="section7all">
+          <div class="section7top">
+            <h3
+              class="sm:text-[22px] mb-3 text-lg font-bold text-purple-900 md:text-[32px] text-center leaeding-[38px]">
+              Komandamızın Pərdə Arxası</h3>
+            <h6 class="text-base text-purple-700 text-sans md:text-xl text-center font-semibold">Komandamızla Tanış Olaq
+            </h6>
+          </div>
+          <div class="section7cards">
+            <div class="section7cardss w-full flex flex-col gap-5 px-2 my-12 mx-auto max-w-[1296px]">
+              <div class="sec7flex flex flex-wrap items-center justify-center gap-[10px] sm:gap-[20px] md:gap-[24px]">
+                <div
+                  class="flex flex-col  min-h-[220px] justify-center items-center border-2 border-[#A271F2] sm:rounded-[30px] rounded-[24px] sm:p-4 p-2 relative">
+                  <div class="relative w-full"><img alt="2" loading="lazy" width="0" height="0" decoding="async"
+                      data-nimg="1"
+                      class="sm:w-[260px] xs:w-[230px] w-[190px] relative bottom-0 z-10 mx-auto md:h-[250px] sm:h-[230px] h-[200px] rounded-[14px] object-cover"
+                      src="https://api.websiteca.com/storage/Cup5kWbVIA9nfp4TN5w9ecGRkQUkhfVh8umVITKe.jpg"
+                      style="color: transparent;"></div>
+                  <div class="relative sm:-top-10 -top-8 bg-white w-full h-[50px] py-4 z-20 rounded-[15px]">
+                    <div class="flex flex-col justify-center items-center gap-1 "><span
+                        class="text-mainDarkPurple sm:text-xl text-base font-bold">Ramil Mirzayev</span><span
+                        class="text-mainLightPurpleText text-sm font-bold text-center">CEO</span></div>
+                  </div>
+                </div>
+                <div
+                  class="flex flex-col  min-h-[220px] justify-center items-center border-2 border-[#A271F2] sm:rounded-[30px] rounded-[24px] sm:p-4 p-2 relative">
+                  <div class="relative w-full"><img alt="10" loading="lazy" width="0" height="0" decoding="async"
+                      data-nimg="1"
+                      class="sm:w-[260px] xs:w-[230px] w-[190px] relative bottom-0 z-10 mx-auto md:h-[250px] sm:h-[230px] h-[200px] rounded-[14px] object-cover"
+                      src="https://api.websiteca.com/storage/uTGbFRppma9BB7BTTYffzFgy8m1MfQEa7RkNdAVe.jpg"
+                      style="color: transparent;"></div>
+                  <div class="relative sm:-top-10 -top-8 bg-white w-full h-[50px] py-4 z-20 rounded-[15px]">
+                    <div class="flex flex-col justify-center items-center gap-1 "><span
+                        class="text-mainDarkPurple sm:text-xl text-base font-bold">Rasim Adurahman</span><span
+                        class="text-mainLightPurpleText text-sm font-bold text-center">Project Manager</span></div>
+                  </div>
+                </div>
+                <div
+                  class="flex flex-col  min-h-[220px] justify-center items-center border-2 border-[#A271F2] sm:rounded-[30px] rounded-[24px] sm:p-4 p-2 relative">
+                  <div class="relative w-full"><img alt="4" loading="lazy" width="0" height="0" decoding="async"
+                      data-nimg="1"
+                      class="sm:w-[260px] xs:w-[230px] w-[190px] relative bottom-0 z-10 mx-auto md:h-[250px] sm:h-[230px] h-[200px] rounded-[14px] object-cover"
+                      src="https://api.websiteca.com/storage/cMDfFJGRPFXHH8bqJc6CXw5RT6RbYOjHDmmAhvq4.jpg"
+                      style="color: transparent;"></div>
+                  <div class="relative sm:-top-10 -top-8 bg-white w-full h-[50px] py-4 z-20 rounded-[15px]">
+                    <div class="flex flex-col justify-center items-center gap-1 "><span
+                        class="text-mainDarkPurple sm:text-xl text-base font-bold">Ahmad Rustamov</span><span
+                        class="text-mainLightPurpleText text-sm font-bold text-center">Team Lead</span></div>
+                  </div>
+                </div>
+                <div
+                  class="flex flex-col  min-h-[220px] justify-center items-center border-2 border-[#A271F2] sm:rounded-[30px] rounded-[24px] sm:p-4 p-2 relative">
+                  <div class="relative w-full"><img alt="25" loading="lazy" width="0" height="0" decoding="async"
+                      data-nimg="1"
+                      class="sm:w-[260px] xs:w-[230px] w-[190px] relative bottom-0 z-10 mx-auto md:h-[250px] sm:h-[230px] h-[200px] rounded-[14px] object-cover"
+                      src="https://api.websiteca.com/storage/4RIXyEhwxrU4nkxG2MUT2NqxZk0byqD4W7VyvnRf.jpg"
+                      style="color: transparent;"></div>
+                  <div class="relative sm:-top-10 -top-8 bg-white w-full h-[50px] py-4 z-20 rounded-[15px]">
+                    <div class="flex flex-col justify-center items-center gap-1 "><span
+                        class="text-mainDarkPurple sm:text-xl text-base font-bold">Murad Aghamedov</span><span
+                        class="text-mainLightPurpleText text-sm font-bold text-center">Backend Developer</span></div>
+                  </div>
+                </div>
+                <div
+                  class="flex flex-col  min-h-[220px] justify-center items-center border-2 border-[#A271F2] sm:rounded-[30px] rounded-[24px] sm:p-4 p-2 relative">
+                  <div class="relative w-full"><img alt="20" loading="lazy" width="0" height="0" decoding="async"
+                      data-nimg="1"
+                      class="sm:w-[260px] xs:w-[230px] w-[190px] relative bottom-0 z-10 mx-auto md:h-[250px] sm:h-[230px] h-[200px] rounded-[14px] object-cover"
+                      src="https://api.websiteca.com/storage/S3chfzTRjo3ykhVY7JaRbRNbJ28LVeXA1duP7YAN.png"
+                      style="color: transparent;"></div>
+                  <div class="relative sm:-top-10 -top-8 bg-white w-full h-[50px] py-4 z-20 rounded-[15px]">
+                    <div class="flex flex-col justify-center items-center gap-1 "><span
+                        class="text-mainDarkPurple sm:text-xl text-base font-bold">Fuad Mammadov</span><span
+                        class="text-mainLightPurpleText text-sm font-bold text-center">Front-End Developer</span></div>
+                  </div>
+                </div>
+                <div
+                  class="flex flex-col  min-h-[220px] justify-center items-center border-2 border-[#A271F2] sm:rounded-[30px] rounded-[24px] sm:p-4 p-2 relative">
+                  <div class="relative w-full"><img alt="19" loading="lazy" width="0" height="0" decoding="async"
+                      data-nimg="1"
+                      class="sm:w-[260px] xs:w-[230px] w-[190px] relative bottom-0 z-10 mx-auto md:h-[250px] sm:h-[230px] h-[200px] rounded-[14px] object-cover"
+                      src="https://api.websiteca.com/storage/8imyJH3yz86nxrP3fTkAfq9faXyfrPhLMsD5nWvm.jpg"
+                      style="color: transparent;"></div>
+                  <div class="relative sm:-top-10 -top-8 bg-white w-full h-[50px] py-4 z-20 rounded-[15px]">
+                    <div class="flex flex-col justify-center items-center gap-1 "><span
+                        class="text-mainDarkPurple sm:text-xl text-base font-bold">Mirafgan Eminbayli</span><span
+                        class="text-mainLightPurpleText text-sm font-bold text-center">Frontend Developer</span></div>
+                  </div>
+                </div>
+                <div
+                  class="flex flex-col  min-h-[220px] justify-center items-center border-2 border-[#A271F2] sm:rounded-[30px] rounded-[24px] sm:p-4 p-2 relative">
+                  <div class="relative w-full"><img alt="14" loading="lazy" width="0" height="0" decoding="async"
+                      data-nimg="1"
+                      class="sm:w-[260px] xs:w-[230px] w-[190px] relative bottom-0 z-10 mx-auto md:h-[250px] sm:h-[230px] h-[200px] rounded-[14px] object-cover"
+                      src="https://api.websiteca.com/storage/UFeJ0M6cDGYTUcdTSz79BOYyuQMUIU5NWfhk2wuv.jpg"
+                      style="color: transparent;"></div>
+                  <div class="relative sm:-top-10 -top-8 bg-white w-full h-[50px] py-4 z-20 rounded-[15px]">
+                    <div class="flex flex-col justify-center items-center gap-1 "><span
+                        class="text-mainDarkPurple sm:text-xl text-base font-bold">Idrak Mustafazada</span><span
+                        class="text-mainLightPurpleText text-sm font-bold text-center">Customer Support</span></div>
+                  </div>
+                </div>
+                <div
+                  class="flex flex-col  min-h-[220px] justify-center items-center border-2 border-[#A271F2] sm:rounded-[30px] rounded-[24px] sm:p-4 p-2 relative">
+                  <div class="relative w-full"><img alt="23" loading="lazy" width="0" height="0" decoding="async"
+                      data-nimg="1"
+                      class="sm:w-[260px] xs:w-[230px] w-[190px] relative bottom-0 z-10 mx-auto md:h-[250px] sm:h-[230px] h-[200px] rounded-[14px] object-cover"
+                      src="https://api.websiteca.com/storage/k6AiYFMXvZ3HIpwTdQAZiHZMyjeOnGQ8TpZY4VTz.jpg"
+                      style="color: transparent;"></div>
+                  <div class="relative sm:-top-10 -top-8 bg-white w-full h-[50px] py-4 z-20 rounded-[15px]">
+                    <div class="flex flex-col justify-center items-center gap-1 "><span
+                        class="text-mainDarkPurple sm:text-xl text-base font-bold">Saida Chinani</span><span
+                        class="text-mainLightPurpleText text-sm font-bold text-center">SMM</span></div>
+                  </div>
+                </div>
+                <div
+                  class="flex flex-col  min-h-[220px] justify-center items-center border-2 border-[#A271F2] sm:rounded-[30px] rounded-[24px] sm:p-4 p-2 relative">
+                  <div class="relative w-full"><img alt="12" loading="lazy" width="0" height="0" decoding="async"
+                      data-nimg="1"
+                      class="sm:w-[260px] xs:w-[230px] w-[190px] relative bottom-0 z-10 mx-auto md:h-[250px] sm:h-[230px] h-[200px] rounded-[14px] object-cover"
+                      src="https://api.websiteca.com/storage/souFthYY1tpKeJKs20LqEqbjGvT1pxAZ5OBCtr1u.jpg"
+                      style="color: transparent;"></div>
+                  <div class="relative sm:-top-10 -top-8 bg-white w-full h-[50px] py-4 z-20 rounded-[15px]">
+                    <div class="flex flex-col justify-center items-center gap-1 "><span
+                        class="text-mainDarkPurple sm:text-xl text-base font-bold">Matanat M.</span><span
+                        class="text-mainLightPurpleText text-sm font-bold text-center">Front End Developer</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section8">
+      <div class="container mx-auto px-5">
+        <div class="section8all">
+          <div class="section8top mb-12">
+            <h3
+              class="sm:text-[22px] mb-3 text-lg font-bold text-purple-900 md:text-[32px] text-center leaeding-[38px]">
+              Son İşlərimiz</h3>
+            <h6 class="text-base text-purple-700 text-sans md:text-xl text-center font-semibold">Paylaşmaqdan Qürur
+              Duyuruq
+            </h6>
+          </div>
+          <div id="sec8cards" class="section8cards my-12 flex flex-wrap justify-center gap-4"></div>
+          <div class="pagination mt-8 flex justify-center items-center gap-4 ">
+            <button onclick="showPage(1)">1</button>
+            <button onclick="showPage(2)">2</button>
+            <button onclick="showPage(3)">3</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section9 py-12">
+      <div class="container mx-auto px-5">
+        <div class="section9all">
+          <div class="section9top">
+            <h3
+              class="sm:text-[22px] mb-3 text-lg font-bold text-purple-900 md:text-[32px] text-center leaeding-[38px]">
+              Müştərilərimizin Rəyləri</h3>
+            <h6 class="text-base text-purple-700 text-sans md:text-xl text-center font-semibold">Müştərilərin fikirləri
+            </h6>
+          </div>
+          <div class="section9swiper my-12 border border-gray-200 rounded-lg shadow-sm">
+            <swiper-container class="mySwiper" navigation="true" pagination="true" keyboard="true" mousewheel="true"
+              css-mode="true">
+              <swiper-slide>
+                <div class="text-purple-800 font-medium text-xl text-center">Müştərilərdən müsbət rəy</div>
+                <div class="text-slate-500 my-6 px-6 text-center">Veb saytımı hazırlamaq üçün Sayt.az-ı seçmək biznesim
+                  üçün verdiyim ən yaxşı qərar idi.</div>
+                <div class="flex justify-center items-center gap-5">
+                  <div class="w-16 ">
+                    <img class="rounded-full" src="/imgs/Bahman.png" alt="">
+                  </div>
+                  <div>
+                    <h5>Hikmat Taghiyev</h5>
+                    <h6>Aaccountant</h6>
+                  </div>
+                </div>
+              </swiper-slide>
+              <swiper-slide>
+                <div class="text-purple-800 font-medium text-xl text-center">Müştərilərdən müsbət rəy</div>
+                <div class="text-slate-500 my-6 px-6 text-center">Veb saytımı hazırlamaq üçün Sayt.az-ı seçmək biznesim
+                  üçün verdiyim ən yaxşı qərar idi.</div>
+                <div class="flex justify-center items-center gap-5">
+                  <div class="w-16 ">
+                    <img class="rounded-full" src="/imgs/selcan.png" alt="">
+                  </div>
+                  <div>
+                    <h5>Seljan Novruz</h5>
+                    <h6>CEO</h6>
+                  </div>
+                </div>
+              </swiper-slide>
+              <swiper-slide>
+                <div class="text-purple-800 font-medium text-xl text-center">Müştərilərdən müsbət rəy</div>
+                <div class="text-slate-500 my-6 px-6 text-center">Veb saytımı hazırlamaq üçün Sayt.az-ı seçmək biznesim
+                  üçün verdiyim ən yaxşı qərar idi.</div>
+                <div class="flex justify-center items-center gap-5">
+                  <div class="w-16">
+                    <img class="rounded-full" src="/imgs/Hikmet.png" alt="">
+                  </div>
+                  <div>
+                    <h5>Bahman Ahmadli</h5>
+                    <h6>CEO</h6>
+                  </div>
+                </div>
+              </swiper-slide>
+            </swiper-container>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section10 py-12">
+      <div class="container mx-auto max-w-7xl">
+        <h1 class="sm:text-[22px] mb-3 text-lg font-bold text-purple-900 md:text-[32px] text-center leaeding-[38px]">
+          Bloqumuza daxil olun</h1>
+        <p class="text-center text-purple-800 mb-8">Vebin İnkişafı, Dizaynı və Onlayn Strategiyaları ilə bağlı maraqlı
+          məqalələri kəşf edin</p>
+
+        <a href=""></a>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mx-auto">
+
+          <div class="bg-white rounded-lg shadow-md overflow-hidden flex flex-col border border-purple-700">
+            <img src="/imgs/img5.jpg" alt="Web Trends" class="w-full h-48 object-cover">
+            <div class="p-4 flex-grow">
+              <h2 class="text-lg font-semibold text-gray-800 mb-2">Uğurlu biznes üçün hansı veb trendləri izləməlisən?
+              </h2>
+            </div>
+            <div class="p-4 pt-0 flex flex-wrap gap-2">
+              <span class="px-3 py-1 rounded-full bg-purple-300 text-purple-800 text-xs">Feb 27, 2025</span>
+              <span class="px-3 py-1 rounded-full bg-purple-300 text-purple-800 text-xs">webdesign</span>
+              <span class="px-3 py-1 rounded-full bg-purple-300 text-purple-800 text-xs">marketinq</span>
+              <span class="px-3 py-1 rounded-full bg-purple-300 text-purple-800 text-xs">sayt</span>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-lg shadow-md overflow-hidden flex flex-col border border-purple-700">
+            <img src="/imgs/img6.jpg" alt="DeepSeek AI" class="w-full h-48 object-cover">
+            <div class="p-4 flex-grow">
+              <h2 class="text-lg font-semibold text-gray-800 mb-2">DeepSeek AI: Yeni Nəsil Süni İntellekt Aləti</h2>
+            </div>
+            <div class="p-4 pt-0 flex flex-wrap gap-2">
+              <span class="px-3 py-1 rounded-full bg-purple-300 text-purple-800 text-xs">Feb 6, 2025</span>
+              <span class="px-3 py-1 rounded-full bg-purple-300 text-purple-800 text-xs">sayt yaratmaq</span>
+              <span class="px-3 py-1 rounded-full bg-purple-300 text-purple-800 text-xs">sayt sifarişi</span>
+              <span class="px-3 py-1 rounded-full bg-purple-300 text-purple-800 text-xs">saytların hazırlanması</span>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-lg shadow-md overflow-hidden flex flex-col border border-purple-700">
+            <img src="/imgs/img7.jpg" alt="Online Business Trends" class="w-full h-48 object-cover">
+            <div class="p-4 flex-grow">
+              <h2 class="text-lg font-semibold text-gray-800 mb-2">2025-ci ildə Onlayn Biznesin Trendləri</h2>
+            </div>
+            <div class="p-4 pt-0 flex flex-wrap gap-2">
+              <span class="px-3 py-1 rounded-full bg-purple-300 text-purple-800 text-xs">Jan 29, 2025</span>
+              <span class="px-3 py-1 rounded-full bg-purple-300 text-purple-800 text-xs">marketinq</span>
+              <span class="px-3 py-1 rounded-full bg-purple-300 text-purple-800 text-xs">social</span>
+              <span class="px-3 py-1 rounded-full bg-purple-300 text-purple-800 text-xs">peşəkar veb dizayn</span>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="mt-8 text-center">
+          <button
+            class="bg-purple-500 hover:bg-purple-600 text-white font-medium py-2 px-6 rounded-md transition-colors">
+            Bütün Bloqlar
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="section11 py-12">
+      <div class="container mx-auto px-5">
+        <div class="section11top text-center">
+          <h1 class="sm:text-[22px] text-lg font-bold text-purple-900 md:text-[32px] text-center leaeding-[38px]">
+            Videolarımızı Kəşf Edin</h1>
+
+          <div class="text-center mx-auto max-w-4xl px-4 sm:px-6 md:px-8 py-4 sm:py-6">
+            <h2 class="text-purple-900 text-sm sm:text-base md:leading-relaxed mx-auto max-w-3xl mb-2">Kəşf Edin,
+              Öyrənin və Uğur Qazanın</h2>
+            <p class="text-purple-900 text-sm sm:text-base md:leading-relaxed mx-auto max-w-3xl">
+              Son nailiyyətlərimizi, media çıxışlarımızı və ətraflı təlimlərimizi izləmək üçün video kolleksiyamıza göz
+              atın. İdeal veb saytınızı qurmaqda sizə necə kömək edə biləcəyimizi öyrənin və uğur hekayəmizdən ilham
+              alın.
+            </p>
+          </div>
+        </div>
+        <div class="section11sw my-12">
+          <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide flex justify-center">
+                <iframe width="80%" height="300" src="https://www.youtube.com/embed/VIDEO_ID_1" frameborder="0"
+                  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen></iframe>
+              </div>
+              <div class="swiper-slide flex justify-center">
+                <iframe width="80%" height="300" src="https://www.youtube.com/embed/VIDEO_ID_1" frameborder="0"
+                  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen></iframe>
+              </div>
+              <div class="swiper-slide flex justify-center">
+                <iframe width="80%" height="300" src="https://www.youtube.com/embed/VIDEO_ID_1" frameborder="0"
+                  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen></iframe>
+              </div>
+            </div>
+
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-pagination"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="bg-gray-50 py-12 px-4">
+    <div class="container mx-auto max-w-6xl">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div class="md:col-span-1">
+          <div class="pb-3">
+            <a href="index.html">
+              <svg xmlns="http://www.w3.org/2000/svg" width="131" height="40" viewBox="0 0 131 40" fill="none">
+                <g clip-path="url(#clip0_2391_1204)">
+                  <path
+                    d="M10.2789 31.0504C6.96305 31.0504 4.4557 30.4233 2.77754 29.1474C1.09937 27.8723 0.16676 25.9901 0.00128174 23.4809H2.46727C3.66878 23.4809 4.85051 24.1298 5.34694 25.2378C6.00976 26.7434 7.64745 27.4957 10.2375 27.4957C11.7709 27.4957 12.9517 27.1826 13.7809 26.5546C14.6092 25.9275 15.0031 25.1326 15.0031 24.1706C15.0031 23.5435 14.7963 23.0417 14.3817 22.6442C13.9671 22.2467 13.4284 21.9127 12.7449 21.6614C12.0614 21.3891 11.2943 21.1595 10.4246 20.9499C9.55404 20.7412 8.68439 20.5106 7.77246 20.281C6.88121 20.0514 5.99087 19.7592 5.12031 19.4244C4.24975 19.0895 3.48352 18.6711 2.80002 18.1493C2.11652 17.6266 1.57782 16.9995 1.16323 16.2254C0.748631 15.4722 0.541784 14.532 0.541784 13.424C0.541784 12.3994 0.748631 11.4583 1.16323 10.6225C1.57782 9.76491 2.17858 9.03346 2.9664 8.42725C3.75332 7.82103 4.70662 7.34006 5.82629 6.98432C6.94507 6.64945 8.23022 6.4616 9.65927 6.4616C12.8087 6.4616 15.1713 7.02606 16.7667 8.155C18.3622 9.28393 19.1904 10.9565 19.2741 13.1735H16.4358C15.3791 13.1735 14.4671 12.5464 13.9077 11.6053C13.2656 10.5181 11.9184 9.97363 9.86701 9.97363C9.26536 9.97363 8.70597 10.0362 8.16727 10.1624C7.62856 10.2876 7.1726 10.4755 6.80027 10.706C6.40636 10.9356 6.11678 11.2496 5.88834 11.6053C5.66081 11.9602 5.55649 12.3585 5.55649 12.8177C5.55649 13.2152 5.61854 13.5501 5.72197 13.8423C5.82629 14.1345 6.09519 14.4068 6.4882 14.6364C6.88211 14.8878 7.48287 15.1382 8.27069 15.3687C9.05851 15.6201 10.1152 15.8915 11.4409 16.2263C12.9329 16.6238 14.2387 17.0213 15.3161 17.4179C16.3935 17.8154 17.2847 18.2755 17.9682 18.7973C18.6526 19.3409 19.1707 19.9689 19.4809 20.7212C19.8128 21.4526 19.9567 22.3937 19.9567 23.4809C19.9567 24.5681 19.7507 25.5727 19.3361 26.492C18.9215 27.4113 18.3208 28.2063 17.4916 28.876C16.684 29.5448 15.6686 30.0676 14.4662 30.4442C13.2647 30.8199 11.8554 31.0086 10.2393 31.0086L10.2807 31.0504H10.2789ZM116.68 26.3668L130.233 11.2705V7.23479H107.957V7.77838C108.62 8.34285 109.159 9.05342 109.511 9.95276C109.676 10.3502 109.801 10.8312 109.905 11.3539H123.622L110.07 26.4503V30.4859H131V29.4822C131 27.7471 129.611 26.3459 127.892 26.3459H116.661L116.68 26.3668ZM107.606 10.9565C107.171 9.86927 106.508 9.03255 105.617 8.42634C104.684 7.79925 103.649 7.33915 102.447 7.0669C101.266 6.79556 99.8979 6.66941 98.3447 6.66941C91.7967 6.66941 88.3774 9.07429 88.0662 13.8832H90.5529C91.6923 13.8832 92.8327 13.2978 93.3291 12.2524C93.5576 11.7923 93.8885 11.3948 94.3031 11.1026C95.1728 10.4954 96.4166 10.1824 98.0534 10.1824C99.7522 10.1824 100.974 10.4954 101.721 11.1652C102.301 11.6253 102.695 12.2524 102.881 13.0682C102.964 13.3813 103.005 13.7997 103.027 14.3433C103.047 14.866 103.068 15.4931 103.068 16.1828H101.099C96.4588 16.1828 92.9775 16.8516 90.677 18.1902C88.854 19.2574 87.7766 20.7402 87.3827 22.6433C88.0455 23.166 88.6049 23.8149 89.0411 24.5672C89.2273 24.8803 89.3927 25.1943 89.4962 25.5291C89.7866 26.3032 89.9521 27.1182 89.9521 27.9966C89.9521 28.4985 89.8901 29.0003 89.7866 29.4604C90.471 29.9414 91.2373 30.318 92.1069 30.5894C93.0809 30.8825 94.0963 31.0286 95.1944 31.0286C98.4059 31.0286 101.037 30.1084 103.109 28.2471V30.485H105.14C106.86 30.485 108.248 29.0838 108.248 27.3487V15.4096C108.248 13.5065 108.021 12.0219 107.585 10.9347L107.606 10.9565ZM103.089 24.3594C102.758 24.8195 102.364 25.2369 101.929 25.6135C101.473 25.9901 100.996 26.3041 100.457 26.5546C99.9186 26.806 99.3592 27.0147 98.7584 27.1617C98.1577 27.3078 97.5569 27.3705 96.9355 27.3705C95.5883 27.3705 94.5118 27.0773 93.7239 26.5129C92.9163 25.9484 92.5215 25.0908 92.5215 23.9828C92.5215 22.4563 93.205 21.3274 94.5522 20.595C95.8994 19.8636 97.9301 19.5079 100.602 19.5079H103.089V24.3793V24.3594ZM76.7103 27.9975C76.7103 27.6209 76.7516 27.2443 76.8137 26.8895C76.7516 26.8895 76.6896 26.8895 76.6275 26.8895C76.275 26.8895 75.9647 26.8477 75.6949 26.7425C75.4251 26.6381 75.1769 26.4711 74.9898 26.1989C74.8037 25.9266 74.658 25.5718 74.5546 25.0899C74.4502 24.6089 74.4089 23.9818 74.4089 23.2295V10.9347H75.0717C76.7912 10.9347 78.1798 9.53349 78.1798 7.79835V7.00337H74.408V3.1356C74.408 1.40045 73.0194 -0.000732422 71.2999 -0.000732422H69.2071V7.00428C67.5703 7.00428 66.2438 8.34285 66.2438 9.9945V10.9356H69.2071V23.8784C69.2071 25.0491 69.2898 26.0528 69.4562 26.9312C69.6217 27.8088 69.9329 28.5203 70.4095 29.1056C70.8655 29.6701 71.5076 30.1093 72.3368 30.4024C73.1444 30.6946 74.2011 30.8417 75.4863 30.8417C76.087 30.8417 76.6464 30.8208 77.1438 30.779C77.1851 30.779 77.2481 30.7582 77.2895 30.7582C77.2274 30.5912 77.1653 30.4233 77.124 30.2563C76.8749 29.5666 76.7507 28.8134 76.7507 28.0402L76.7103 27.9975ZM60.0716 7.02606H61.087C63.2427 7.02606 64.7554 9.20044 63.9882 11.2496L56.9024 30.5068C56.4464 31.741 56.0111 32.8282 55.6172 33.7484C55.2233 34.6686 54.8303 35.4209 54.4571 36.0271C54.1468 36.529 53.7943 37.0308 53.4003 37.5118C53.0064 37.9928 52.5712 38.4111 52.0738 38.7868C51.5765 39.1626 51.0378 39.4557 50.4163 39.6644C49.8156 39.8949 49.1312 39.9993 48.3856 39.9993C47.7426 39.9993 47.2246 39.9575 46.8316 39.8949C46.0851 39.7697 45.5464 39.1208 45.5464 38.3685V35.1069C45.9197 35.253 46.2929 35.3583 46.6652 35.4C47.0384 35.4627 47.4117 35.4835 47.7633 35.4835C48.2606 35.4835 48.6959 35.3783 49.1105 35.1695C49.5044 34.9608 49.8767 34.6468 50.2086 34.2285C50.5405 33.8101 50.8507 33.2874 51.1619 32.6603C51.4515 32.0332 51.7627 31.3226 52.0316 30.4859L43.3287 7.02606H46.5411C47.8883 7.02606 49.0691 7.90362 49.4837 9.17957L52.1359 17.3553C52.5298 18.6094 52.9228 19.8645 53.2753 21.0978C53.6486 22.3311 54.0416 23.5653 54.4562 24.7986L60.0501 7.02606H60.0716ZM38.189 28.2489C36.0962 30.1102 33.444 31.0504 30.1902 31.0504C29.0922 31.0504 28.0561 30.9043 27.0821 30.6112C26.1081 30.318 25.2376 29.8788 24.5127 29.3143C23.787 28.7499 23.1862 28.0393 22.7716 27.1817C22.3363 26.345 22.1295 25.3622 22.1295 24.2332C22.1295 21.4944 23.2896 19.4461 25.6315 18.0867C27.9518 16.7273 31.4754 16.0584 36.1376 16.0584H38.1269C38.1269 15.347 38.1062 14.7407 38.0855 14.1971C38.0648 13.6536 38.0028 13.2352 37.9398 12.9221C37.7537 12.1072 37.3598 11.4792 36.7797 10.9982C36.0332 10.3493 34.811 10.0154 33.0915 10.0154C31.434 10.0154 30.1696 10.3285 29.2999 10.9347C28.8646 11.2487 28.5337 11.6253 28.3052 12.1063C27.8079 13.1517 26.6684 13.7579 25.5074 13.7579H23C23.2896 8.90732 26.7503 6.48065 33.3604 6.48065C34.9145 6.48065 36.303 6.62767 37.5046 6.87814C38.707 7.14948 39.7637 7.60959 40.6954 8.23758C41.6073 8.84379 42.2701 9.70138 42.7054 10.7886C43.1407 11.8758 43.3682 13.3813 43.3682 15.3052V27.3696C43.3682 29.1047 41.9797 30.5059 40.2601 30.5059H38.1872V28.248L38.189 28.2489ZM38.1476 19.4253H35.6402C32.9467 19.4253 30.8953 19.8019 29.5274 20.5333C28.1595 21.2657 27.476 22.4155 27.476 23.9628C27.476 25.0917 27.87 25.9493 28.6776 26.5138C29.4861 27.0782 30.5635 27.3714 31.9314 27.3714C32.5528 27.3714 33.1536 27.3088 33.7759 27.1626C34.3767 27.0165 34.9567 26.8078 35.4954 26.5564C36.0341 26.2851 36.5315 25.9711 36.9874 25.5945C37.4434 25.2179 37.8373 24.7995 38.1683 24.3394V19.4262L38.1476 19.4253Z"
+                    fill="#334155" />
+                  <path
+                    d="M83.2174 32.4942C85.6825 32.4942 87.6718 30.4868 87.6718 27.9985C87.6718 25.5101 85.6834 23.5027 83.2174 23.5027C80.7514 23.5027 78.7621 25.5101 78.7621 27.9985C78.7621 30.4868 80.7514 32.4942 83.2174 32.4942Z"
+                    fill="#7D3BE2" />
+                </g>
+                <defs>
+                  <clipPath id="clip0_2391_1204">
+                    <rect width="131" height="40" fill="white" />
+                  </clipPath>
+                </defs>
+              </svg>
+            </a>
+          </div>
+
+          <p class="text-gray-600 text-sm mb-6">
+            Sayt.az - Web saytların hazırlanması, Domain, Hosting satışı, SEO, SMM və texniki xidmətlər təklif edir.
+          </p>
+
+          <div>
+            <p class="text-purple-700 font-medium mb-3">Bizi izləyin :</p>
+            <div class="flex space-x-4">
+              <a href="#" class="text-purple-400 hover:text-purple-600 transition-colors">
+                <i class="fab fa-facebook-f text-2xl"></i>
+              </a>
+              <a href="#" class="text-purple-400 hover:text-purple-600 transition-colors">
+                <i class="fab fa-instagram text-2xl"></i>
+              </a>
+              <a href="#" class="text-purple-400 hover:text-purple-600 transition-colors">
+                <i class="fab fa-whatsapp text-2xl"></i>
+              </a>
+              <a href="#" class="text-purple-400 hover:text-purple-600 transition-colors">
+                <i class="fab fa-linkedin-in text-2xl"></i>
+              </a>
+              <a href="#" class="text-purple-400 hover:text-purple-600 transition-colors">
+                <i class="fab fa-youtube text-2xl"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="md:col-span-1">
+          <h3 class="text-purple-900 font-bold mb-4 text-lg">HOSTİNQ & DOMEN</h3>
+          <ul class="space-y-2">
+            <li><a href="#" class="text-gray-600 hover:text-purple-700">Domen</a></li>
+            <li><a href="#" class="text-gray-600 hover:text-purple-700">Veb Hostinq</a></li>
+            <li><a href="#" class="text-gray-600 hover:text-purple-700">VPS Hostinq</a></li>
+            <li><a href="#" class="text-gray-600 hover:text-purple-700">Server</a></li>
+          </ul>
+        </div>
+
+        <div class="md:col-span-1">
+          <h3 class="text-purple-900 font-bold mb-4 text-lg">ŞİRKƏT</h3>
+          <ul class="space-y-2">
+            <li><a href="#" class="text-gray-600 hover:text-purple-700">Haqqımızda</a></li>
+            <li><a href="#" class="text-gray-600 hover:text-purple-700">Əlaqə</a></li>
+            <li><a href="#" class="text-gray-600 hover:text-purple-700">Bloq</a></li>
+            <li><a href="#" class="text-gray-600 hover:text-purple-700">Portfolio</a></li>
+          </ul>
+        </div>
+
+        <div class="md:col-span-1"></div>
+      </div>
+
+      <div class="border-t border-gray-200 mt-12 pt-6 flex flex-col md:flex-row justify-between items-center">
+        <div class="text-gray-600 text-sm mb-4 md:mb-0">
+          © Copyright 2004-2025 © Sayt.az . Bütün Hüquqlar Qorunur.
+        </div>
+        <div class="flex items-center space-x-4">
+          <a href="tel:+994703300004" class="text-gray-600 hover:text-purple-700 flex items-center">
+            <i class="fas fa-phone-alt mr-2"></i>
+            +(99470) 330-00-04
+          </a>
+          <a href="mailto:support@sayt.az" class="text-gray-600 hover:text-purple-700 flex items-center">
+            <i class="fas fa-envelope mr-2"></i>
+            support@sayt.az
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
+  <script>
+
+    document.addEventListener('DOMContentLoaded', function () {
+
+      const dropdownButtons = document.querySelectorAll('.dropdown-button')
+
+      dropdownButtons.forEach(button => {
+        button.addEventListener('click', function (e) {
+          e.stopPropagation()
+
+          dropdownButtons.forEach(otherButton => {
+            if (otherButton !== button) {
+              otherButton.nextElementSibling.classList.add('hidden')
+            }
+          })
+
+          const dropdownMenu = this.nextElementSibling
+          dropdownMenu.classList.toggle('hidden')
+        })
+      })
+
+      document.addEventListener('click', function () {
+        document.querySelectorAll('.dropdown-menu').forEach(menu => {
+          menu.classList.add('hidden')
+        })
+      })
+
+      const burgerButton = document.getElementById('burgerButton')
+      const closeButton = document.getElementById('closeButton')
+      const mobileMenu = document.getElementById('mobileMenu')
+
+      burgerButton.addEventListener('click', function () {
+        mobileMenu.classList.remove('hidden')
+        document.body.style.overflow = 'hidden'
+      })
+
+      closeButton.addEventListener('click', function () {
+        mobileMenu.classList.add('hidden')
+        document.body.style.overflow = ''
+      })
+
+      const mobileDropdownButtons = document.querySelectorAll('.mobile-dropdown-button')
+      mobileDropdownButtons.forEach(button => {
+        button.addEventListener('click', function () {
+          const submenu = this.nextElementSibling
+          submenu.classList.toggle('hidden')
+
+          const arrow = this.querySelector('span:last-child')
+          if (submenu.classList.contains('hidden')) {
+            arrow.textContent = '▼'
+          } else {
+            arrow.textContent = '▲'
+          }
+        })
+      })
+    })
+
+    const sec2btn = document.getElementById("sec2btn")
+    const sec2output = document.getElementById("sec2output")
+    sec2btn.onclick = function () {
+      sec2output.innerHTML = "Sifariş kodu səhvdir"
+    }
+
+    const section3btn = document.getElementById("section3btn")
+    const section3inp = document.getElementById("section3inp")
+    const section3error = document.getElementById("section3error")
+
+    function changefunc() {
+      const regex = /^[a-zA-Z0-9-]+$/
+      if (section3inp.value.length < 3 || section3inp.value.length > 20) {
+        section3inp.classList.remove("border-green-500")
+        section3error.innerHTML = "*Domen adının uzunluğu ən az 3 olmalıdır"
+      } else if (!regex.test(section3inp.value)) {
+        section3inp.classList.remove("border-green-500")
+        section3error.innerHTML = "Domen adı düzgün deyil. Domen adında yalnız hərf, rəqəm və '-' işarəsi ola bilər"
+      } else {
+        section3error.innerHTML = ""
+        section3btn.onclick = function () {
+          section3inp.classList.add("border-green-500")
+        }
+      }
+    }
+
+    section3inp.addEventListener("input", changefunc)
+
+    const section4btn1 = document.getElementById("section4btn1")
+    const section4btn2 = document.getElementById("section4btn2")
+    const sec4card1price = document.getElementById("sec4card1price")
+    const sec4card2price = document.getElementById("sec4card2price")
+    const sec4card3price = document.getElementById("sec4card3price")
+    const sec4cardstime = document.querySelectorAll(".sec4cardstime")
+    section4btn1.onclick = function () {
+      sec4card1price.innerHTML = "$5"
+      sec4card2price.innerHTML = "$15"
+      sec4card3price.innerHTML = "$100"
+      sec4cardstime.forEach(span => {
+        span.innerHTML = "/month"
+      })
+      section4btn1.classList.remove("text-gray-600")
+      section4btn1.classList.add("bg-purple-500", "text-white")
+      section4btn2.classList.remove("bg-purple-500", "text-white")
+
+    }
+
+    section4btn2.onclick = function () {
+      sec4card1price.innerHTML = "$50"
+      sec4card2price.innerHTML = "$150"
+      sec4card3price.innerHTML = "$1000"
+      sec4cardstime.forEach(span => {
+        span.innerHTML = "/year"
+      })
+      section4btn1.classList.remove("bg-purple-500", "text-white")
+      section4btn1.classList.add("text-gray-600")
+      section4btn2.classList.add("bg-purple-500", "text-white")
+    }
+
+    const data = [
+      {
+        id: 1,
+        image: "img1.png",
+        title: "CASPILIMO.COM",
+      },
+      {
+        id: 2,
+        image: "img2.png",
+        title: "BAYMAK.AZ",
+      },
+      {
+        id: 3,
+        image: "img3.png",
+        title: "SELJANNOVRUZLU.COM",
+      },
+      {
+        id: 4,
+        image: "img4.png",
+        title: "QARMON.AZ",
+      },
+      {
+        id: 5,
+        image: "img1.png",
+        title: "NAFTALANSANATORIYA.COM",
+      },
+      {
+        id: 6,
+        image: "img2.png",
+        title: "DOCFARHAD.AZ",
+      },
+      {
+        id: 7,
+        image: "img3.png",
+        title: "Ramil Mirzayev",
+      },
+      {
+        id: 8,
+        image: "img4.png",
+        title: "Ramil Mirzayev",
+      },
+      {
+        id: 9,
+        image: "img1.png",
+        title: "Ramil Mirzayev",
+      },
+      {
+        id: 10,
+        image: "img2.png",
+        title: "Ramil Mirzayev",
+      },
+
+    ]
+
+    const sec8cards = document.getElementById("sec8cards")
+    sec8cards.innerHTML = data.map(card => `
+              <div class="cardd my-6 mb-6 max-w-sm w-full p-5 bg-purple-100 rounded-2xl shadow-lg text-center">
+                <img class="w-full h-52 object-cover rounded-lg" src="/imgs/${card.image}">
+                <p class="mt-4 text-lg font-bold text-purple-700">${card.title}</p>
+              </div>
+        `).join('')
+
+    const cards = document.querySelectorAll(".cardd")
+
+    function showPage(page) {
+      cards.forEach(card => card.style.display = "none")
+      let start = (page - 1) * 4
+      let end = start + 4
+      cards.forEach((card, index) => {
+        if (index >= start && index < end) {
+          card.style.display = "block"
+        }
+      })
+    }
+
+    showPage(1)
+
+    document.addEventListener('DOMContentLoaded', function () {
+      var swiper = new Swiper(".mySwiper", {
+        slidesPerView: 1,
+        spaceBetween: 30,
+        loop: false,
+        keyboard: {
+          enabled: true,
+        },
+        mousewheel: true,
+        cssMode: true,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        breakpoints: {
+          768: {
+            slidesPerView: 2
+          }
+        }
+      })
+    })
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+</body>
+
+</html>

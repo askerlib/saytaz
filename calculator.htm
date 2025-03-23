@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="az">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toggle Switch</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .switch-container {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .switch {
+            position: relative;
+            width: 50px;
+            height: 25px;
+        }
+
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ddd;
+            border-radius: 25px;
+            transition: 0.3s;
+        }
+
+        .slider:before {
+            content: "";
+            position: absolute;
+            height: 18px;
+            width: 18px;
+            left: 4px;
+            bottom: 3px;
+            background-color: white;
+            border-radius: 50%;
+            transition: 0.3s;
+        }
+
+        input:checked+.slider {
+            background-color: #9b59b6;
+        }
+
+        input:checked+.slider:before {
+            transform: translateX(25px);
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f9f9fe;
+            color: #333;
+            line-height: 1.6;
+            padding: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            color: #5a35b5;
+            margin: 25px 0 15px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #e9e5f9;
+            position: relative;
+        }
+
+        h3::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 80px;
+            height: 2px;
+            background-color: #7a52d3;
+        }
+
+        h6 {
+            font-size: 0.9rem;
+            margin: 0;
+            font-weight: 500;
+            color: #4a4a4a;
+        }
+
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            background: #7a52d3;
+            cursor: pointer;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            transition: background 0.3s, transform 0.2s;
+        }
+
+        input[type="range"]::-webkit-slider-thumb:hover {
+            background: #9b59b6;
+            transform: scale(1.1);
+        }
+
+        .bg-gray-100 {
+            background-color: #f5f7fd;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 4px 12px rgba(122, 82, 211, 0.08);
+            margin-bottom: 15px;
+            border: 1px solid #e9e5f9;
+        }
+
+        .bg-blue-100 {
+            background-color: #eef5ff;
+            border-radius: 12px;
+            padding: 16px 20px;
+            box-shadow: 0 4px 12px rgba(122, 82, 211, 0.08);
+            margin: 15px 0 25px;
+            border: 1px solid #d2e2ff;
+            font-weight: 500;
+        }
+
+        .switch-container {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+            background-color: #f5f7fd;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(122, 82, 211, 0.08);
+            margin-bottom: 20px;
+            border: 1px solid #e9e5f9;
+            flex: 1;
+        }
+
+        .switch {
+            position: relative;
+            width: 54px;
+            height: 28px;
+        }
+
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #e0e0e0;
+            border-radius: 28px;
+            transition: 0.4s;
+            box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2);
+        }
+
+        .slider:before {
+            content: "";
+            position: absolute;
+            height: 20px;
+            width: 20px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            border-radius: 50%;
+            transition: 0.4s;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        input:checked+.slider {
+            background-color: #7a52d3;
+        }
+
+        input:checked+.slider:before {
+            transform: translateX(26px);
+        }
+
+        input:focus+.slider {
+            box-shadow: 0 0 2px #7a52d3;
+        }
+
+        .flex {
+            display: flex;
+        }
+
+        .gap-4 {
+            gap: 20px;
+        }
+
+        .gap-2 {
+            gap: 10px;
+        }
+
+        .items-center {
+            align-items: center;
+        }
+
+        .justify-between {
+            justify-content: space-between;
+        }
+
+        label {
+            font-weight: 500;
+            color: #4a4a4a;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .text-sm {
+            font-size: 0.875rem;
+        }
+
+        .text-gray-600 {
+            color: #666;
+        }
+
+        span.bg-purple-500 {
+            background-color: #7a52d3;
+            color: white;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-weight: 500;
+            box-shadow: 0 2px 4px rgba(122, 82, 211, 0.3);
+        }
+
+        span.text-purple-500 {
+            color: #7a52d3;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        p {
+            background-color: #eef5ff;
+            padding: 14px 20px;
+            border-radius: 12px;
+            margin: 15px 0 25px;
+            font-weight: 500;
+            display: flex;
+            justify-content: space-between;
+            border: 1px solid #d2e2ff;
+        }
+
+        p span {
+            color: #7a52d3;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        @media (max-width: 768px) {
+            .flex {
+                flex-direction: column;
+            }
+
+            .gap-4 {
+                gap: 10px;
+            }
+
+            body {
+                padding: 15px;
+            }
+        }
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(122, 82, 211, 0.4);
+            }
+
+            70% {
+                box-shadow: 0 0 0 10px rgba(122, 82, 211, 0);
+            }
+
+            100% {
+                box-shadow: 0 0 0 0 rgba(122, 82, 211, 0);
+            }
+        }
+
+        input:checked+.slider:before {
+            animation: pulse 1.5s;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div>
+        <h3 class="my-6">Statik səhifələr</h3>
+        <div class="bg-gray-100 p-4 rounded">
+            <label for="pageCount">Neçə statik səhifə olacaq?</label>
+            <div class="flex justify-between items-center">
+                <span id="pageCountLabel" class="bg-purple-500 text-white px-2 py-1 rounded">1</span>
+                <input type="range" id="pageCount" min="1" max="20" step="1" value="1" class="w-full mx-2">
+                <span class="bg-purple-500 text-white px-2 py-1 rounded">20</span>
+            </div>
+        </div>
+
+        <div class="bg-gray-100 p-4 rounded mt-2">
+            <label for="designLevel">Dizayn mürəkkəblik :</label>
+            <div class="flex justify-between text-sm text-gray-600">
+                <span>Sada</span>
+                <span>Orta</span>
+                <span>Xüsusi</span>
+            </div>
+            <input type="range" id="designLevel" min="0" max="2" step="1" value="0" class="w-full">
+        </div>
+
+        <div class="bg-blue-100 p-4 mt-2 rounded flex justify-between">
+            <span>Xərc :</span>
+            <span id="totalCost" class="text-purple-500 font-semibold">1 səhifə / ₼ 100</span>
+        </div>
+    </div>
+
+    <h3 class="my-6">Veb Sayt Əlavələri</h3>
+    <div class="flex gap-4">
+        <div class="switch-container" id="switches">
+            <div class="flex items-center gap-2">
+                <h6>Bloq</h6>
+                <label class="switch">
+                    <input type="checkbox" data-price="200">
+                    <span class="slider"></span>
+                </label>
+            </div>
+            <div class="flex items-center gap-2">
+                <h6>Responsive</h6>
+                <label class="switch">
+                    <input type="checkbox" data-price="100">
+                    <span class="slider"></span>
+                </label>
+            </div>
+            <div class="flex items-center gap-2">
+                <h6>Mesajlaşma</h6>
+                <label class="switch">
+                    <input type="checkbox" data-price="50">
+                    <span class="slider"></span>
+                </label>
+            </div>
+            <div class="flex items-center gap-2">
+                <h6>Qalareya</h6>
+                <label class="switch">
+                    <input type="checkbox" data-price="100">
+                    <span class="slider"></span>
+                </label>
+            </div>
+            <div class="flex items-center gap-2">
+                <h6>Saytda Axtarış</h6>
+                <label class="switch">
+                    <input type="checkbox" data-price="100">
+                    <span class="slider"></span>
+                </label>
+            </div>
+            <div class="flex items-center gap-2">
+                <h6>Rezervasiya</h6>
+                <label class="switch">
+                    <input type="checkbox" data-price="400">
+                    <span class="slider"></span>
+                </label>
+            </div>
+            <div class="flex items-center gap-2">
+                <h6>Analitika / İzləmə</h6>
+                <label class="switch">
+                    <input type="checkbox" data-price="50">
+                    <span class="slider"></span>
+                </label>
+            </div>
+        </div>
+        <div class="switch-container" id="switches">
+            <div class="flex items-center gap-2">
+                <h6>Üzv girişi / Profillər</h6>
+                <label class="switch">
+                    <input type="checkbox" data-price="400">
+                    <span class="slider"></span>
+                </label>
+            </div>
+            <div class="flex items-center gap-2">
+                <h6>Forum</h6>
+                <label class="switch">
+                    <input type="checkbox" data-price="400">
+                    <span class="slider"></span>
+                </label>
+            </div>
+            <div class="flex items-center gap-2">
+                <h6>Canlı Söhbət</h6>
+                <label class="switch">
+                    <input type="checkbox" data-price="50">
+                    <span class="slider"></span>
+                </label>
+            </div>
+            <div class="flex items-center gap-2">
+                <h6>Əlaqə Forması</h6>
+                <label class="switch">
+                    <input type="checkbox" data-price="100">
+                    <span class="slider"></span>
+                </label>
+            </div>
+            <div class="flex items-center gap-2">
+                <h6>SXəritə Məlumatı / Geolocation</h6>
+                <label class="switch">
+                    <input type="checkbox" data-price="100">
+                    <span class="slider"></span>
+                </label>
+            </div>
+            <div class="flex items-center gap-2">
+                <h6>Sosial Media inteqrasiyası</h6>
+                <label class="switch">
+                    <input type="checkbox" data-price="50">
+                    <span class="slider"></span>
+                </label>
+            </div>
+            <div class="flex items-center gap-2">
+                <h6>Admin Panel</h6>
+                <label class="switch">
+                    <input type="checkbox" data-price="300">
+                    <span class="slider"></span>
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <div class="bg-blue-100 p-4 mt-2 rounded flex justify-between">
+        <span>Əlavələrin xərci:</span>
+        <span id="total" class="text-purple-500 font-semibold">0 ₼</span>
+    </div>
+
+    <h3 class="my-6">Axtarış motorunun optimallaşdırılması</h3>
+    <div class="flex gap-4">
+        <div class="switch-container2" id="switches">
+            <div class="flex items-center gap-2">
+                <h6>Başlıqlar & Meta</h6>
+                <label class="switch">
+                    <input type="checkbox" data-price="200">
+                    <span class="slider"></span>
+                </label>
+            </div>
+            <div class="flex items-center gap-2">
+                <h6>+20 Qabaqcıl texnika</h6>
+                <label class="switch">
+                    <input type="checkbox" data-price="300">
+                    <span class="slider"></span>
+                </label>
+            </div>
+            <div class="flex items-center gap-2">
+                <h6>Sitemap</h6>
+                <label class="switch">
+                    <input type="checkbox" data-price="100">
+                    <span class="slider"></span>
+                </label>
+            </div>
+        </div>
+        <div class="switch-container2" id="switches">
+            <div class="flex items-center gap-2">
+                <h6>Açar söz</h6>
+                <label class="switch">
+                    <input type="checkbox" data-price="300">
+                    <span class="slider"></span>
+                </label>
+            </div>
+            <div class="flex items-center gap-2">
+                <h6>Başlıq teqləri</h6>
+                <label class="switch">
+                    <input type="checkbox" data-price="100">
+                    <span class="slider"></span>
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <div class="bg-blue-100 p-4 mt-2 rounded flex justify-between">
+        <span>SEO xərci:</span>
+        <span id="total2" class="text-purple-500 font-semibold">0 ₼</span>
+    </div>
+
+    <h3 class="my-6">Elektron ticarət əlavələri</h3>
+    <div class="flex gap-4">
+        <div class="switch-container3" id="switches">
+            <div class="flex items-center gap-2">
+                <h6>Ödəniş</h6>
+                <label class="switch">
+                    <input type="checkbox" data-price="200">
+                    <span class="slider"></span>
+                </label>
+            </div>
+            <div class="flex items-center gap-2">
+                <h6>Məhsullar</h6>
+                <label class="switch">
+                    <input type="checkbox" data-price="300">
+                    <span class="slider"></span>
+                </label>
+            </div>
+            <div class="flex items-center gap-2">
+                <h6>Filtr</h6>
+                <label class="switch">
+                    <input type="checkbox" data-price="300">
+                    <span class="slider"></span>
+                </label>
+            </div>
+        </div>
+        <div class="switch-container3" id="switches">
+            <div class="flex items-center gap-2">
+                <h6>Səbət</h6>
+                <label class="switch">
+                    <input type="checkbox" data-price="500">
+                    <span class="slider"></span>
+                </label>
+            </div>
+            <div class="flex items-center gap-2">
+                <h6>Bəyəndiklərim</h6>
+                <label class="switch">
+                    <input type="checkbox" data-price="300">
+                    <span class="slider"></span>
+                </label>
+            </div>
+            <div class="flex items-center gap-2">
+                <h6>Məhsul Haqqında</h6>
+                <label class="switch">
+                    <input type="checkbox" data-price="200">
+                    <span class="slider"></span>
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <div class="bg-blue-100 p-4 mt-2 rounded flex justify-between">
+        <span>Elektron ticarət əlavələri xərci:</span>
+        <span id="total3" class="text-purple-500 font-semibold">0 ₼</span>
+    </div>
+
+
+    <div>
+        <h3 class="my-6">Logo dizaynı</h3>
+        <div class="bg-gray-100 p-4 rounded">
+            <div class="flex justify-between text-sm text-gray-600">
+                <span>Ehtiyac yoxdur</span>
+                <span>Sadə</span>
+                <span>Xüsusi</span>
+            </div>
+            <input type="range" id="logoRange" min="0" max="2" step="1" value="0" class="w-full mt-2">
+        </div>
+        <div class="bg-blue-100 p-4 mt-2 rounded flex justify-between">
+            <span>Logo dizayn xərci:</span>
+            <span id="logoCost" class="text-purple-500 font-semibold">0 ₼</span>
+        </div>
+    </div>
+
+
+    <div class="totalprice bg-blue-100 p-4 mt-2 rounded flex justify-between">
+        <span class="text-lg font-semibold">Ümumi saytın xərci :</span>
+        <span id="umumixerc" class="text-purple-500 font-semibold">0 ₼</span>
+    </div>
+    <script>
+        const switchContainers = document.querySelectorAll(".switch-container")
+        const totalSpan = document.getElementById("total")
+        let total = 0
+
+        switchContainers.forEach(container => {
+            container.addEventListener("change", function (event) {
+                if (event.target.type === "checkbox") {
+                    const price = parseInt(event.target.getAttribute("data-price"))
+                    total += event.target.checked ? price : -price
+                    totalSpan.textContent = total + " ₼"
+                }
+            })
+        })
+
+        const switchContainers2 = document.querySelectorAll(".switch-container2")
+        const totalSpan2 = document.getElementById("total2")
+        let total2 = 0
+
+        switchContainers2.forEach(container => {
+            container.addEventListener("change", function (event) {
+                if (event.target.type === "checkbox") {
+                    const price = parseInt(event.target.getAttribute("data-price"))
+                    total2 += event.target.checked ? price : -price
+                    totalSpan2.textContent = total2 + " ₼"
+                }
+            })
+        })
+
+        const switchContainers3 = document.querySelectorAll(".switch-container3")
+        const totalSpan3 = document.getElementById("total3")
+        let total3 = 0
+
+        switchContainers3.forEach(container => {
+            container.addEventListener("change", function (event) {
+                if (event.target.type === "checkbox") {
+                    const price = parseInt(event.target.getAttribute("data-price"))
+                    total3 += event.target.checked ? price : -price
+                    totalSpan3.textContent = total3 + " ₼"
+                }
+            })
+        })
+
+        const logoRange = document.getElementById("logoRange")
+        const logoCost = document.getElementById("logoCost")
+
+        logoRange.addEventListener("input", function () {
+            const prices = [0, 100, 200]
+            logoCost.textContent = `${prices[this.value]} ₼`
+        })
+
+        const pageCount = document.getElementById("pageCount")
+        const pageCountLabel = document.getElementById("pageCountLabel")
+        const designLevel = document.getElementById("designLevel")
+        const totalCost = document.getElementById("totalCost")
+        const prices = [100, 200, 300]
+
+        function updateCost() {
+            let count = parseInt(pageCount.value)
+            let pricePerPage = prices[parseInt(designLevel.value)]
+            let total = count * pricePerPage
+            pageCountLabel.textContent = count
+            totalCost.textContent = `${count} səhifə / ₼ ${total}`
+        }
+
+        pageCount.addEventListener("input", updateCost)
+        designLevel.addEventListener("input", updateCost)
+
+        updateCost()
+
+        let umumi = document.getElementById("umumixerc")
+        let toplam = 0
+        function updateTotal() {
+            toplam = total + total2 + total3 + parseInt(logoCost.textContent) + parseInt(totalCost.textContent.split("₼")[1])
+            console.log(toplam)
+            umumi.textContent = toplam + " ₼"
+        }
+
+        updateTotal()
+
+        switchContainers.forEach(container => {
+            container.addEventListener("change", updateTotal)
+        })
+        switchContainers2.forEach(container => {
+            container.addEventListener("change", updateTotal)
+        })
+        switchContainers3.forEach(container => {
+            container.addEventListener("change", updateTotal)
+        })
+        logoRange.addEventListener("input", updateTotal)
+        pageCount.addEventListener("input", updateTotal)
+        designLevel.addEventListener("input", updateTotal)
+
+    </script>
+
+
+</body>
+
+</html>
